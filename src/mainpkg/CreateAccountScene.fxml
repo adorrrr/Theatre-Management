@@ -62,7 +62,7 @@
             <Image url="@../picture/12940-removebg-preview.png" />
          </image>
       </ImageView>
-      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#backOnLoginSceneOnClick" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
+      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#backLoginSceneOnClick" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font></Button>
