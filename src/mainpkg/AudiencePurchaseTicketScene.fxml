@@ -22,7 +22,7 @@
             <DropShadow />
          </effect>
       </Rectangle>
-      <Button fx:id="bbiAddToCartBtn" layoutX="163.0" layoutY="279.0" mnemonicParsing="false" onMouseClicked="#bbiAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Purchase" textFill="WHITE">
+      <Button fx:id="bbiAddToCartBtn" layoutX="163.0" layoutY="279.0" mnemonicParsing="false" onMouseClicked="#bbiAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Add Oder" textFill="WHITE">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
@@ -38,7 +38,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btcAddToCartBtn" layoutX="405.0" layoutY="279.0" mnemonicParsing="false" onMouseClicked="#btcAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Purchase" textFill="WHITE">
+      <Button fx:id="btcAddToCartBtn" layoutX="405.0" layoutY="279.0" mnemonicParsing="false" onMouseClicked="#btcAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Add Oder" textFill="WHITE">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
@@ -54,7 +54,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btsAddToCartBtn" layoutX="640.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#btsAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Purchase" textFill="WHITE">
+      <Button fx:id="btsAddToCartBtn" layoutX="640.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#btsAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Add Oder" textFill="WHITE">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
@@ -70,7 +70,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="btbsAddToCartBtn" layoutX="162.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#btbsAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Purchase" textFill="WHITE">
+      <Button fx:id="btbsAddToCartBtn" layoutX="162.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#btbsAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Add Oder" textFill="WHITE">
          <font>
             <Font name="System Bold" size="11.0" />
          </font>
@@ -101,7 +101,7 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Label layoutX="264.0" layoutY="20.0" prefHeight="43.0" prefWidth="218.0" text="Ticket Purchase" textFill="#b05b3b" underline="true">
+      <Label layoutX="264.0" layoutY="19.0" prefHeight="43.0" prefWidth="218.0" text="Ticket Purchase" textFill="#b05b3b" underline="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
