@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.AudienceContactsUsController">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE" />
+      <AnchorPane layoutX="69.0" layoutY="49.0" prefHeight="398.0" prefWidth="648.0" style="-fx-background-color: White; -fx-background-radius: 7;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="13.0" layoutY="5.0" text="CONTACT US">
+               <font>
+                  <Font name="Meiryo UI Bold" size="22.0" />
+               </font>
+            </Label>
+            <Line endX="519.0" layoutX="109.0" layoutY="43.0" startX="-100.0" strokeWidth="0.5" />
+            <AnchorPane layoutX="367.0" layoutY="75.0" prefHeight="287.0" prefWidth="253.0" style="-fx-background-color: #F8F3D4;">
+               <effect>
+                  <DropShadow height="7.0" radius="3.0" width="7.0" />
+               </effect>
+               <children>
+                  <Label layoutX="13.0" layoutY="7.0" text="Contacts">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="137.0" layoutX="108.0" layoutY="29.0" startX="-100.0" strokeWidth="0.5" />
+                  <ImageView fitHeight="58.0" fitWidth="60.0" layoutX="45.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" scaleX="0.75" scaleY="0.75" scaleZ="0.75">
+                     <image>
+                        <Image url="@../picture/1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="75.0" scaleX="0.75" scaleY="0.75" scaleZ="0.75" text="Rongodoot" textFill="#b05b3b">
+                     <font>
+                        <Font name="Bauhaus 93" size="30.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="2.0" radius="0.75" spread="1.0" width="3.0" />
+                     </effect>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="41.0" prefHeight="13.0" prefWidth="45.0" text="Address :" textFill="#b05b3b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="106.0" text="Rongodoot&#10;Ka- 244, Pragati Avenue, Kuril, Dhaka">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="144.0" prefHeight="13.0" prefWidth="58.0" text="Telephone :" textFill="#b05b3b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="162.0" prefHeight="50.0" prefWidth="116.0" text="+88-02-9824007&#10;+88-01913399015&#10;+88-01913398051">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="218.0" prefHeight="13.0" prefWidth="58.0" text="Email :" textFill="#b05b3b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="238.0" text="customercare@rongodoot.com">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="23.0" layoutY="62.0" text="Connect with Venu">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Label>
+            <Line endX="43.0" layoutX="117.0" layoutY="82.0" startX="-100.0" stroke="#b05b3b" strokeWidth="0.5" />
+            <ComboBox fx:id="selectVenueCombocox" layoutX="28.0" layoutY="94.0" onAction="#selectVenueComboBoxOnItemSelected" prefHeight="30.0" prefWidth="238.0" promptText="Select the venue name" />
+            <TextArea fx:id="outputTextArea" layoutX="28.0" layoutY="135.0" prefHeight="232.0" prefWidth="302.0">
+               <font>
+                  <Font size="15.0" />
+               </font></TextArea>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

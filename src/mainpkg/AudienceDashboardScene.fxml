@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="763.0" style="-fx-background-color: C7DCA7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.AudienceDashboardSceneController">
+   <children>
+      <ImageView fitHeight="487.0" fitWidth="763.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../picture/Theatre%20Backgrounds%20Related%20Keywords%20amp%20Suggestions.jpg" />
+         </image>
+      </ImageView>
+      <BorderPane prefHeight="475.0" prefWidth="763.0">
+         <left>
+            <AnchorPane prefHeight="354.0" prefWidth="129.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button cancelButton="true" defaultButton="true" layoutY="-3.0" mnemonicParsing="false" onAction="#homePageOnMouseClick" opacity="0.7" prefHeight="43.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Home Page" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="80.0" mnemonicParsing="false" onAction="#scheduleCheckOnMouseClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Schedule Check" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="40.0" mnemonicParsing="false" onAction="#upcomingShowsOnMouseClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Upcoming Shows" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="160.0" mnemonicParsing="false" onAction="#comfirmationTicketOnMouseClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Comfirmation Ticket" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="200.0" mnemonicParsing="false" onAction="#historyOnMouseClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="History" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="120.0" mnemonicParsing="false" onAction="#ticketPurchaseOnMouseClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Ticket Purchase" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="240.0" mnemonicParsing="false" onAction="#membershipOnMouseClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Membership" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="280.0" mnemonicParsing="false" onAction="#feedbackOnMouseClcik" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Feedback" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="320.0" mnemonicParsing="false" onAction="#contactsUsOnMouseClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Contacts Us" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+         </left>
+         <top>
+            <AnchorPane prefHeight="124.0" prefWidth="763.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane disable="true" opacity="0.54" prefHeight="124.0" prefWidth="763.0" style="-fx-background-color: #610505;" />
+                  <Label layoutX="71.0" layoutY="84.0" prefHeight="35.0" prefWidth="179.0" text="Audience DashBoard" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Bodoni MT Black" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="59.0" fitWidth="77.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../picture/1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="52.0" layoutY="43.0" prefHeight="49.0" prefWidth="229.0" text="Rongodoot">
+                     <font>
+                        <Font name="Bauhaus 93" size="44.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="7.0" radius="2.0" spread="0.47" width="3.0" />
+                     </effect>
+                     <textFill>
+                        <RadialGradient centerX="0.4444444444444444" centerY="0.4857142857142857" focusAngle="180.0" radius="0.5">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#861212" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <right>
+            <AnchorPane opacity="0.82" prefHeight="360.0" prefWidth="234.0" style="-fx-background-color: #610505;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="82.0" layoutY="5.0" lineSpacing="0.5" prefHeight="21.0" prefWidth="78.0" text="Notification" textAlignment="CENTER" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="77.0" layoutY="325.0" mnemonicParsing="false" onAction="#signOutOnMouseClick" style="-fx-background-color: #891111;" text="Sign Out" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="62.0" layoutY="268.0" mnemonicParsing="false" style="-fx-background-color: #891111;" text="Load Notification" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <TableView layoutX="4.0" layoutY="30.0" prefHeight="231.0" prefWidth="226.0">
+                    <columns>
+                      <TableColumn prefWidth="225.0" text="View Board" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="57.0" layoutY="295.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="116.0" style="-fx-background-color: #891111;" text="Delete Notification" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </right>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="120.0" layoutY="40.0" prefHeight="113.0" prefWidth="219.0" text=" &quot;Welcome back! We're thrilled to have&#10; you with us again. Get ready for an &#10;engaging experience filled with insights, &#10;inspiration, and a community that shares &#10;your passion. Let the journey begin!&quot;" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Unicode MS" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
