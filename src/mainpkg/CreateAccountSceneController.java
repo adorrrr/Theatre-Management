@@ -48,7 +48,7 @@ public class CreateAccountSceneController implements Initializable {
     @FXML private DatePicker dobDatePicker;
 
     
-    
+    boolean addUserStatus;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -180,13 +180,13 @@ public class CreateAccountSceneController implements Initializable {
                 window.show();
         }
         else {
-            Alert a2 = new Alert(Alert.AlertType.WARNING);
-            a2.setTitle("Warning ");
-            a2.setHeaderText("LogIn Failed");
-//            a2.setContentText("Wrong ID/Password");
-            a2.setContentText("Wrong ID/Password. Please Try Again");
-            a2.showAndWait();
-        }
+                Alert a2 = new Alert(Alert.AlertType.WARNING);
+                a2.setTitle("Warning ");
+                a2.setHeaderText("LogIn Failed");
+//              a2.setContentText("Wrong ID/Password");
+                a2.setContentText("Wrong ID/Password. Please Try Again");
+                a2.showAndWait();
+            }
     
     } 
     
@@ -207,7 +207,7 @@ public class CreateAccountSceneController implements Initializable {
     
     
     
-    //
+    
     private void audienceAndShow() throws IOException {
         File file = new File("Signup Info/Audience.bin");
         if (file.exists()){

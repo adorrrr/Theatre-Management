@@ -22,7 +22,7 @@
                </font>
             </Label>
             <Line endX="452.0" layoutX="101.0" layoutY="44.0" startX="-94.0" strokeWidth="0.5" />
-            <TableView layoutX="26.0" layoutY="74.0" prefHeight="229.0" prefWidth="511.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
+            <TableView layoutX="26.0" layoutY="65.0" prefHeight="238.0" prefWidth="511.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
               <columns>
                 <TableColumn prefWidth="154.0" text="Shows name" />
                 <TableColumn prefWidth="78.0" text="Seat" />

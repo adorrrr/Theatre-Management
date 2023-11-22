@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="789.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.AudiencePurchaseTicketsSceneController">
+   <children>
+      <AnchorPane layoutX="48.0" layoutY="49.0" prefHeight="469.0" prefWidth="716.0" style="-fx-background-color: white; -fx-background-radius: 7;">
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="184.0" layoutX="65.0" layoutY="103.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="203.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Button fx:id="addToOrder1" layoutX="173.0" layoutY="242.0" mnemonicParsing="false" onAction="#addToOrder1OnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Add Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="184.0" layoutX="304.0" layoutY="103.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="203.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Label layoutX="315.0" layoutY="252.0" prefHeight="17.0" prefWidth="83.0" text="Dharmashok">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="addToOrder2" layoutX="414.0" layoutY="248.0" mnemonicParsing="false" onAction="#addToOrder2OnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Add Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="184.0" layoutX="542.0" layoutY="103.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="203.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Label layoutX="552.0" layoutY="246.0" prefHeight="17.0" prefWidth="92.0" text="Gobheer Asukh">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="addToOrder3" layoutX="652.0" layoutY="244.0" mnemonicParsing="false" onAction="#addToOrder3OnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Add Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="184.0" layoutX="64.0" layoutY="298.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="203.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Label layoutX="75.0" layoutY="452.0" prefHeight="17.0" prefWidth="64.0" text="Dakghar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="addToOrder4" layoutX="167.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#btbsAddToCartBtnOnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Add Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Button>
+      <Label layoutX="76.0" layoutY="246.0" prefHeight="17.0" prefWidth="64.0" text="Nabanna">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#backLoginSceneOnClick" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <ImageView fitHeight="126.0" fitWidth="203.0" layoutX="64.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../picture/299477186_377421801220168_6860442315556632125_n.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="135.0" fitWidth="203.0" layoutX="304.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../picture/20840654_1630149427008767_8805834175355242305_n.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="144.0" fitWidth="203.0" layoutX="65.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../picture/202678_478875988802789_1652111964_o.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="138.0" fitWidth="203.0" layoutX="542.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../picture/20840666_1630180700338973_5007633975167448638_n.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="55.0" layoutY="51.0" text="Upcoming Shows">
+         <font>
+            <Font name="Meiryo UI Bold" size="22.0" />
+         </font>
+      </Label>
+      <Line endX="605.0" layoutX="151.0" layoutY="89.0" startX="-100.0" strokeWidth="0.5" />
+   </children>
+</AnchorPane>

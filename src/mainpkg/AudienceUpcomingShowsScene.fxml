@@ -10,9 +10,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="777.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.AudienceUpcomingShowsSceneController">
    <children>
-      <AnchorPane layoutX="27.0" layoutY="51.0" prefHeight="400.0" prefWidth="727.0" style="-fx-background-color: White; -fx-background-radius: 5;">
+      <AnchorPane layoutX="19.0" layoutY="56.0" prefHeight="400.0" prefWidth="727.0" style="-fx-background-color: White; -fx-background-radius: 5;">
          <effect>
             <DropShadow />
          </effect>
@@ -30,9 +30,19 @@
                         <Image url="@../picture/299477186_377421801220168_6860442315556632125_n.jpg" />
                      </image>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
+                  <Label layoutX="-1.0" layoutY="122.0" prefHeight="17.0" prefWidth="227.0" style="-fx-background-color: #F8F3D4;" text="     Nabanna">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addToOrder1" layoutX="138.0" layoutY="118.0" mnemonicParsing="false" onAction="#details1OnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Button>
                </children>
                <effect>
                   <DropShadow />
@@ -40,29 +50,49 @@
             </AnchorPane>
             <AnchorPane layoutX="248.0" layoutY="56.0" prefHeight="152.0" prefWidth="228.0" style="-fx-background-color: #F8F3D4;">
                <children>
-                  <ImageView fitHeight="152.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="152.0" fitWidth="227.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../picture/20840654_1630149427008767_8805834175355242305_n.jpg" />
                      </image>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
+                  <Label layoutX="1.0" layoutY="123.0" prefHeight="17.0" prefWidth="227.0" style="-fx-background-color: #F8F3D4;" text="    Dharmashok">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addToOrder11" layoutX="140.0" layoutY="119.0" mnemonicParsing="false" onAction="#details2OnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Button>
                </children>
                <effect>
                   <DropShadow />
                </effect>
             </AnchorPane>
-            <AnchorPane layoutX="11.0" layoutY="226.0" prefHeight="152.0" prefWidth="228.0" style="-fx-background-color: #F8F3D4;">
+            <AnchorPane layoutX="11.0" layoutY="227.0" prefHeight="153.0" prefWidth="228.0" style="-fx-background-color: #F8F3D4;">
                <children>
                   <ImageView fitHeight="152.0" fitWidth="201.0" layoutX="14.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../picture/202678_478875988802789_1652111964_o.jpg" />
                      </image>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
+                  <Label layoutY="121.0" prefHeight="17.0" prefWidth="227.0" style="-fx-background-color: #F8F3D4;" text="        Dakghar">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addToOrder1111" layoutX="139.0" layoutY="117.0" mnemonicParsing="false" onAction="#details4OnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Button>
                </children>
                <effect>
                   <DropShadow />
@@ -70,17 +100,33 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Button layoutX="9.0" layoutY="8.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE" />
-      <AnchorPane layoutX="518.0" layoutY="110.0" prefHeight="152.0" prefWidth="228.0" style="-fx-background-color: #F8F3D4;">
+      <Button layoutX="12.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <AnchorPane layoutX="508.0" layoutY="112.0" prefHeight="152.0" prefWidth="228.0" style="-fx-background-color: #F8F3D4;">
          <children>
             <ImageView fitHeight="175.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../picture/20840666_1630180700338973_5007633975167448638_n.jpg" />
                </image>
                <cursor>
-                  <Cursor fx:constant="HAND" />
+                  <Cursor fx:constant="DEFAULT" />
                </cursor>
             </ImageView>
+            <Label layoutY="122.0" prefHeight="17.0" prefWidth="227.0" style="-fx-background-color: #F8F3D4;" text="    Gobheer Asukh">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="addToOrder111" layoutX="139.0" layoutY="118.0" mnemonicParsing="false" onAction="#details3OnClick" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 12; -fx-background-color: #367E18;" text="Details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
          </children>
          <effect>
             <DropShadow />
