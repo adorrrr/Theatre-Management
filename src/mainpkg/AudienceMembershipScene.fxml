@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.AudienceMembershipSceneController">
    <children>
       <AnchorPane layoutX="93.0" layoutY="34.0" prefHeight="421.0" prefWidth="595.0" style="-fx-background-color: White; -fx-background-radius: 7;">
          <effect>
@@ -26,20 +26,20 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <Label layoutX="75.0" layoutY="127.0" prefHeight="109.0" prefWidth="371.0" text="1. Membership card cost will be 100 taka for 1 year.&#10;2. Member will get 5% discount for 2(two) tickets once a day.&#10;3. Member can take part in quiz contest on FB.&#10;4. Club quiz contest winner will get 2 tickets complimentary.&#10;5. Quiz contest winner will get 5% discount over the year for 2(two) tickets once a day.&#10;6. Top Member will get premiere show invitation." textFill="#b05b3b">
+            <Label layoutX="75.0" layoutY="125.0" prefHeight="109.0" prefWidth="371.0" text="1. Membership card cost will be 100 taka for 1 year.&#10;2. Member will get 5% discount for 2(two) tickets once a day.&#10;3. Member can take part in quiz contest on FB.&#10;4. Club quiz contest winner will get 2 tickets complimentary.&#10;5. Quiz contest winner will get 5% discount over the year for 2(two) tickets once a day.&#10;6. Top Member will get premiere show invitation." textFill="#b05b3b">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <Button layoutX="266.0" layoutY="381.0" mnemonicParsing="false" style="-fx-background-color: #367E18;" text="Submit" textFill="WHITE" />
+            <Button layoutX="266.0" layoutY="381.0" mnemonicParsing="false" onAction="#applyForMembership" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #367E18; -fx-background-radius: 10;" text="Submit" textFill="WHITE" />
             <Label layoutX="23.0" layoutY="274.0" text="First Name  " />
-            <TextField layoutX="25.0" layoutY="290.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Name" />
-            <Label layoutX="307.0" layoutY="274.0" text="Last Name" />
-            <TextField layoutX="307.0" layoutY="291.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Last Name" />
+            <TextField fx:id="enterUserName" layoutX="25.0" layoutY="290.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Name" style="-fx-background-radius: 7;" />
+            <Label layoutX="307.0" layoutY="274.0" text="User ID" />
+            <TextField fx:id="enterUserID" layoutX="307.0" layoutY="291.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter User ID" style="-fx-background-radius: 7;" />
             <Label layoutX="23.0" layoutY="325.0" text="Email " />
-            <TextField layoutX="23.0" layoutY="342.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Email " />
+            <TextField fx:id="enterUserEmail" layoutX="23.0" layoutY="342.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Email " style="-fx-background-radius: 7;" />
             <Label layoutX="307.0" layoutY="325.0" text="Phone " />
-            <TextField layoutX="307.0" layoutY="342.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Phone number" />
+            <TextField fx:id="enterUserNumber" layoutX="307.0" layoutY="342.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Phone number" style="-fx-background-radius: 7;" />
             <Label layoutX="17.0" layoutY="245.0" text="Apply for membership">
                <font>
                   <Font name="Meiryo UI Bold" size="13.0" />
@@ -48,6 +48,6 @@
             <Line endX="70.0" layoutX="108.0" layoutY="267.0" startX="-100.0" strokeWidth="0.5" />
          </children>
       </AnchorPane>
-      <Button layoutX="21.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE" />
+      <Button layoutX="21.0" layoutY="20.0" mnemonicParsing="false" onAction="#returnHomePage" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE" />
    </children>
 </AnchorPane>

@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceOrderTicketSceneController.java</file>
-            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/User.java</file>
-            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/Audience.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceUpcomingShowsSceneController.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/DirectorFeedbackSceneController.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceDashboardSceneController.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceMembershipSceneController.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/CreateAccountSceneController.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/MainApplication.java</file>
         </group>
     </open-files>
 </project-private>

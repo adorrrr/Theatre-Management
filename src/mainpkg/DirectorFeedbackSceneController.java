@@ -49,7 +49,7 @@ public class DirectorFeedbackSceneController implements Initializable {
         DataOutputStream dos = null;
         
         try {
-            dic = new File(" Diector Feedback.bin");
+            dic = new File("Diector Feedback.bin");
             if(dic.exists()) fos = new FileOutputStream(dic,true);
             else fos = new FileOutputStream(dic);           
 
