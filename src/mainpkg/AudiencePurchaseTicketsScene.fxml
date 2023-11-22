@@ -5,6 +5,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -29,10 +30,10 @@
                </font>
             </Label>
             <Line endX="277.0" layoutX="100.0" layoutY="51.0" startX="-100.0" strokeWidth="0.5" />
-            <ComboBox layoutX="12.0" layoutY="115.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Name:" style="-fx-background-radius: 10;" />
-            <DatePicker layoutX="12.0" layoutY="166.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Date:" style="-fx-background-radius: 10;" />
-            <ComboBox layoutX="12.0" layoutY="221.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Time:" style="-fx-background-radius: 10;" />
-            <ComboBox layoutX="177.0" layoutY="273.0" prefHeight="35.0" prefWidth="187.0" promptText="Number of Tickets:" style="-fx-background-radius: 10;" />
+            <ComboBox layoutX="12.0" layoutY="103.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Name:" style="-fx-background-radius: 10;" />
+            <DatePicker layoutX="12.0" layoutY="146.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Date:" style="-fx-background-radius: 10;" />
+            <ComboBox layoutX="12.0" layoutY="188.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Time:" style="-fx-background-radius: 10;" />
+            <ComboBox layoutX="177.0" layoutY="231.0" prefHeight="35.0" prefWidth="187.0" promptText="Number of Tickets:" style="-fx-background-radius: 10;" />
             <Button layoutX="117.0" layoutY="372.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #367E18;" text="Purchase" textFill="WHITE">
                <effect>
                   <DropShadow color="#404040" height="6.0" radius="2.75" spread="0.31" width="7.0" />
@@ -46,10 +47,11 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <RadioButton layoutX="20.0" layoutY="273.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="135.0" text="Membership" />
-            <RadioButton layoutX="20.0" layoutY="293.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="135.0" text="Non Membership" />
-            <TextField layoutX="12.0" layoutY="322.0" prefHeight="35.0" prefWidth="352.0" promptText="Give your membership code" style="-fx-background-radius: 10;" />
-            <TextField layoutX="12.0" layoutY="65.0" prefHeight="35.0" prefWidth="352.0" promptText="Give your membership code" style="-fx-background-radius: 10;" />
+            <RadioButton layoutX="20.0" layoutY="231.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="135.0" text="Membership" />
+            <RadioButton layoutX="20.0" layoutY="251.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="135.0" text="Non Membership" />
+            <TextField layoutX="12.0" layoutY="280.0" prefHeight="35.0" prefWidth="352.0" promptText="Give your membership code" style="-fx-background-radius: 10;" />
+            <TextField layoutX="12.0" layoutY="61.0" prefHeight="35.0" prefWidth="352.0" promptText="User ID" style="-fx-background-radius: 10;" />
+            <TextArea layoutX="12.0" layoutY="326.0" prefHeight="38.0" prefWidth="352.0" promptText="Ticket Price" style="-fx-background-radius: 10;" />
          </children>
       </AnchorPane>
    </children>
