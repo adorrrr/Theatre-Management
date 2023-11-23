@@ -32,9 +32,9 @@ public class AudienceMembershipSceneController implements Initializable {
     @FXML
     private TextField enterUserID;
     @FXML
-    private TextField enterUserEmail;
-    @FXML
     private TextField enterUserNumber;
+    @FXML
+    private TextField numberlast4digits;
 
     /**
      * Initializes the controller class.
@@ -48,7 +48,7 @@ public class AudienceMembershipSceneController implements Initializable {
     private void applyForMembership(ActionEvent event) throws IOException {
         if (enterUserName.getText().isEmpty() 
                 || enterUserID.getText().isEmpty() 
-                || enterUserEmail.getText().isEmpty() 
+                || numberlast4digits.getText().isEmpty() 
                 || enterUserNumber.getText().isEmpty()){
             // Show notification to user
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -64,7 +64,7 @@ public class AudienceMembershipSceneController implements Initializable {
                 dir.mkdir();
             }               
             FileWriter fw = new FileWriter(new File(dir, "MembershipData.bin"), true);
-            fw.write(enterUserName.getText() + "\t" +enterUserID.getText()  + "\t" + enterUserEmail.getText() 
+            fw.write(enterUserName.getText() + "\t" +enterUserID.getText()  + "\t" + numberlast4digits.getText() 
             + "\t" +enterUserNumber.getText()+ "\n");
             fw.close();
             Alert a1 = new Alert(Alert.AlertType.INFORMATION);

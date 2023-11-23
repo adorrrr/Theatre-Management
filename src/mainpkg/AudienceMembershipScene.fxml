@@ -36,8 +36,8 @@
             <TextField fx:id="enterUserName" layoutX="25.0" layoutY="290.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Name" style="-fx-background-radius: 7;" />
             <Label layoutX="307.0" layoutY="274.0" text="User ID" />
             <TextField fx:id="enterUserID" layoutX="307.0" layoutY="291.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter User ID" style="-fx-background-radius: 7;" />
-            <Label layoutX="23.0" layoutY="325.0" text="Email " />
-            <TextField fx:id="enterUserEmail" layoutX="23.0" layoutY="342.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Email " style="-fx-background-radius: 7;" />
+            <Label layoutX="23.0" layoutY="325.0" text="Number last digits" />
+            <TextField fx:id="numberlast4digits" layoutX="23.0" layoutY="342.0" prefHeight="25.0" prefWidth="267.0" promptText="Last 4 digits" style="-fx-background-radius: 7;" />
             <Label layoutX="307.0" layoutY="325.0" text="Phone " />
             <TextField fx:id="enterUserNumber" layoutX="307.0" layoutY="342.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Phone number" style="-fx-background-radius: 7;" />
             <Label layoutX="17.0" layoutY="245.0" text="Apply for membership">

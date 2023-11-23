@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.AudienceScheduleCheckSceneController">
    <children>
       <AnchorPane layoutX="23.0" layoutY="73.0" prefHeight="374.0" prefWidth="718.0" style="-fx-background-color: White; -fx-background-radius: 7;">
          <effect>
@@ -21,7 +21,7 @@
                   <Font name="Meiryo UI Bold" size="22.0" />
                </font>
             </Label>
-            <Line endX="603.0" layoutX="109.0" layoutY="43.0" startX="-100.0" strokeWidth="0.5" />
+            <Line endX="603.0" layoutX="108.0" layoutY="44.0" startX="-100.0" strokeWidth="0.5" />
             <TableView layoutX="14.0" layoutY="67.0" prefHeight="284.0" prefWidth="687.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
               <columns>
                 <TableColumn prefWidth="140.0" text="Show Name" />

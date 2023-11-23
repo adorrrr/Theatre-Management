@@ -47,18 +47,15 @@ public class AudienceContactsUsController implements Initializable {
     @FXML
     private void selectVenueComboBoxOnItemSelected(ActionEvent event) {
         if(selectVenueCombocox.getValue().equals("Dhaka")) {
-        //outputTextArea.setText("");
+        outputTextArea.setText("");
         outputTextArea.clear();
         File f = null;
-        //FileReader fw = null;
+        FileReader fw = null;
         Scanner sc; String str; String[] tokens;
         try {
-            //f = new File("EmpText.txt");
-            FileChooser fc = new FileChooser();
-            f = fc.showOpenDialog(null);
+            f = new File("Venue Contacts/Dhaka.txt");
             sc = new Scanner(f);
             if(f.exists()){
-                outputTextArea.appendText("Content of Emp.txt:\n");
                 while(sc.hasNextLine()){
                     str=sc.nextLine();
                     tokens = str.split(",");
@@ -71,8 +68,6 @@ public class AudienceContactsUsController implements Initializable {
                 }
                 
             }
-            //else 
-            //    outputTextArea.setText("oops! Emp.txt does not exist...");
         }
         
         catch (IOException ex) {
@@ -86,21 +81,16 @@ public class AudienceContactsUsController implements Initializable {
         else if(selectVenueCombocox.getValue().equals("Chittagong")) {
         BufferedReader reader = null;
         try {outputTextArea.clear();
-            // Replace "yourFileName.txt" with the actual file name and path
+            //the actual file name and path
             String fileName = "Venue Contacts/Chittagong.txt";
             
-            // FileReader is used to read the text files in the default encoding.
             FileReader fileReader = new FileReader(fileName);
-            
-            // Wrap FileReader in BufferedReader for efficient reading.
             reader = new BufferedReader(fileReader);
             
             String line;
             while ((line = reader.readLine()) != null) {
-                // Assuming fields are separated by commas (`,`). Adjust accordingly.
                 String[] tokens = line.split(",");
                 
-                // Do something with the tokens, e.g., print them
                 outputTextArea.appendText(
                         "Address: " + tokens[0]+"\n"
                         + "Number: " + tokens[1]+"\n"
