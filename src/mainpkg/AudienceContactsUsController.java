@@ -15,10 +15,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 
 /**
@@ -32,6 +35,8 @@ public class AudienceContactsUsController implements Initializable {
     private ComboBox<String> selectVenueCombocox;
     @FXML
     private TextArea outputTextArea;
+    @FXML
+    private AnchorPane audienceContactsUs;
 
     /**
      * Initializes the controller class.
@@ -49,9 +54,11 @@ public class AudienceContactsUsController implements Initializable {
         if(selectVenueCombocox.getValue().equals("Dhaka")) {
         outputTextArea.setText("");
         outputTextArea.clear();
+        
         File f = null;
         FileReader fw = null;
         Scanner sc; String str; String[] tokens;
+        
         try {
             f = new File("Venue Contacts/Dhaka.txt");
             sc = new Scanner(f);
@@ -59,14 +66,13 @@ public class AudienceContactsUsController implements Initializable {
                 while(sc.hasNextLine()){
                     str=sc.nextLine();
                     tokens = str.split(",");
-                
-                // Do something with the tokens, e.g., print them
+
+                    
                 outputTextArea.appendText(
                         "Address: " + tokens[0]+"\n"
                         + "Number: " + tokens[1]+"\n"
                         + "Mail: " + tokens[2]);
                 }
-                
             }
         }
         
@@ -113,5 +119,11 @@ public class AudienceContactsUsController implements Initializable {
         }
         
 }
+
+    @FXML
+    private void rerturnHomePage(ActionEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));
+        audienceContactsUs.setCenter(parent);
+    }
     
 }

@@ -22,19 +22,23 @@
                </font>
             </Label>
             <Line endX="603.0" layoutX="108.0" layoutY="44.0" startX="-100.0" strokeWidth="0.5" />
-            <TableView layoutX="14.0" layoutY="67.0" prefHeight="284.0" prefWidth="687.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
+            <TableView fx:id="tableView" layoutX="14.0" layoutY="67.0" prefHeight="263.0" prefWidth="687.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
               <columns>
-                <TableColumn prefWidth="140.0" text="Show Name" />
-                  <TableColumn prefWidth="73.0" text="Seat" />
-                  <TableColumn prefWidth="136.0" text="Vanue" />
-                  <TableColumn prefWidth="116.0" text="Date" />
-                  <TableColumn minWidth="6.0" prefWidth="104.0" text="Time" />
-                  <TableColumn minWidth="6.0" prefWidth="117.0" text="Price" />
+                <TableColumn fx:id="showNameColumn" prefWidth="165.0" text="Shows Name" />
+                  <TableColumn fx:id="vanueColumn" prefWidth="161.0" text="Vanue" />
+                  <TableColumn fx:id="dateColumn" prefWidth="148.0" text="Date" />
+                  <TableColumn fx:id="timeColumn" minWidth="6.0" prefWidth="107.0" text="Time" />
+                  <TableColumn fx:id="priceColumn" minWidth="6.0" prefWidth="105.0" text="Price" />
               </columns>
                <effect>
                   <DropShadow height="7.0" radius="3.0" spread="0.12" width="7.0" />
                </effect>
             </TableView>
+            <Button layoutX="602.0" layoutY="339.0" mnemonicParsing="false" onAction="#addTableViewOnClick" style="-fx-background-color: #309a22; -fx-background-radius: 7;" text="Load Schedule" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <Button layoutX="19.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
