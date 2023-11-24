@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.DirectorFeedbackSceneController">
    <children>
-      <AnchorPane layoutX="101.0" layoutY="44.0" prefHeight="421.0" prefWidth="595.0" style="-fx-background-color: White; -fx-background-radius: 7;">
+      <AnchorPane layoutX="100.0" layoutY="37.0" prefHeight="421.0" prefWidth="595.0" style="-fx-background-color: White; -fx-background-radius: 7;">
          <effect>
             <DropShadow />
          </effect>

@@ -15,13 +15,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 
 /**
@@ -35,8 +32,6 @@ public class AudienceContactsUsController implements Initializable {
     private ComboBox<String> selectVenueCombocox;
     @FXML
     private TextArea outputTextArea;
-    @FXML
-    private AnchorPane audienceContactsUs;
 
     /**
      * Initializes the controller class.
@@ -121,9 +116,7 @@ public class AudienceContactsUsController implements Initializable {
 }
 
     @FXML
-    private void rerturnHomePage(ActionEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));
-        audienceContactsUs.setCenter(parent);
+    private void rerturnHomePage(ActionEvent event) {
     }
     
 }
