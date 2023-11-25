@@ -208,6 +208,10 @@ public class CreateAccountSceneController implements Initializable {
     
     
     
+    
+    
+    
+    
     private void audienceAndShow() throws IOException {
         File file = new File("Signup Info/Audience.bin");
         if (file.exists()){
