@@ -15,11 +15,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -116,7 +121,12 @@ public class AudienceContactsUsController implements Initializable {
 }
 
     @FXML
-    private void rerturnHomePage(ActionEvent event) {
+    private void rerturnHomePage(ActionEvent event) throws IOException {
+        Parent mainLCManagementLogInFormParent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));        
+        Scene mainLCManagementLogInFormScene = new Scene(mainLCManagementLogInFormParent);        
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();       
+        stage.setScene(mainLCManagementLogInFormScene);
+        stage.show();
     }
     
 }

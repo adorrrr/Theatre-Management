@@ -4,8 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,12 +12,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.AudiencePurchaseTicketsSceneController">
    <children>
-      <Button layoutX="35.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
+      <Button layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnHomePage" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
          <effect>
             <DropShadow color="#404040" height="6.0" radius="2.75" spread="0.31" width="7.0" />
          </effect>
       </Button>
-      <AnchorPane layoutX="206.0" layoutY="32.0" prefHeight="422.0" prefWidth="377.0" style="-fx-background-color: White; -fx-background-radius: 7;">
+      <AnchorPane layoutX="206.0" layoutY="21.0" prefHeight="447.0" prefWidth="378.0" style="-fx-background-color: White; -fx-background-radius: 7;">
          <effect>
             <DropShadow />
          </effect>
@@ -30,16 +28,16 @@
                </font>
             </Label>
             <Line endX="277.0" layoutX="100.0" layoutY="51.0" startX="-100.0" strokeWidth="0.5" />
-            <ComboBox layoutX="12.0" layoutY="103.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Name:" style="-fx-background-radius: 10;" />
-            <DatePicker layoutX="12.0" layoutY="146.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Date:" style="-fx-background-radius: 10;" />
-            <ComboBox layoutX="12.0" layoutY="188.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Time:" style="-fx-background-radius: 10;" />
-            <ComboBox layoutX="177.0" layoutY="231.0" prefHeight="35.0" prefWidth="187.0" promptText="Number of Tickets:" style="-fx-background-radius: 10;" />
-            <Button layoutX="117.0" layoutY="372.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #367E18;" text="Purchase" textFill="WHITE">
+            <ComboBox fx:id="showsNameComboBox" layoutX="12.0" layoutY="103.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Name:" style="-fx-background-radius: 10;" />
+            <DatePicker fx:id="dob" layoutX="12.0" layoutY="146.0" prefHeight="35.0" prefWidth="352.0" promptText="Show Date:" style="-fx-background-radius: 10;" />
+            <ComboBox fx:id="membershipComboBox" layoutX="12.0" layoutY="188.0" onAction="#membershipOnCilck" prefHeight="35.0" prefWidth="352.0" promptText="Membership" style="-fx-background-radius: 10;" />
+            <ComboBox fx:id="noOfTicket" layoutX="12.0" layoutY="231.0" prefHeight="35.0" prefWidth="352.0" promptText="Number of Tickets:" style="-fx-background-radius: 10;" />
+            <Button layoutX="117.0" layoutY="392.0" mnemonicParsing="false" onAction="#purchaseOnClick" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #367E18;" text="Purchase" textFill="WHITE">
                <effect>
                   <DropShadow color="#404040" height="6.0" radius="2.75" spread="0.31" width="7.0" />
                </effect>
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Button>
             <Label layoutX="10.0" layoutY="32.0" text="It's quick and easy to Purchase Tickets.">
@@ -47,11 +45,21 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <RadioButton layoutX="20.0" layoutY="231.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="135.0" text="Membership" />
-            <RadioButton layoutX="20.0" layoutY="251.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="135.0" text="Non Membership" />
-            <TextField layoutX="12.0" layoutY="280.0" prefHeight="35.0" prefWidth="352.0" promptText="Give your membership code" style="-fx-background-radius: 10;" />
-            <TextField layoutX="12.0" layoutY="61.0" prefHeight="35.0" prefWidth="352.0" promptText="User ID" style="-fx-background-radius: 10;" />
-            <TextArea layoutX="12.0" layoutY="326.0" prefHeight="38.0" prefWidth="352.0" promptText="Ticket Price" style="-fx-background-radius: 10;" />
+            <TextField fx:id="membershipCode" layoutX="12.0" layoutY="280.0" prefHeight="35.0" prefWidth="352.0" promptText="Give your membership code" style="-fx-background-radius: 10;" />
+            <TextField fx:id="userIDTextField" layoutX="12.0" layoutY="61.0" prefHeight="35.0" prefWidth="352.0" promptText="User ID" style="-fx-background-radius: 10;" />
+            <Label fx:id="totalPrice" layoutX="13.0" layoutY="325.0" prefHeight="25.0" prefWidth="352.0" style="-fx-background-color: #a3bcc5; -fx-background-radius: 7;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button layoutX="145.0" layoutY="359.0" mnemonicParsing="false" onAction="#totalPriceOnClick" prefHeight="9.0" prefWidth="80.0" style="-fx-background-color: #367E18; -fx-background-radius: 7;" text="Total Price" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow height="8.0" radius="3.5" spread="0.09" width="8.0" />
+               </effect>
+            </Button>
          </children>
       </AnchorPane>
    </children>
