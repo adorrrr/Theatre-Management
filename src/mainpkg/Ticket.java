@@ -11,18 +11,21 @@ import java.time.LocalDate;
  * @author World gate computer
  */
 public class Ticket {
-    private final String showsNameComboBox;
-    private final LocalDate dob;
-    private final int userIDTextField;
-    private final int noOfTicket;
-    private final String membershipCode;
+     String showsNameComboBox;
+     LocalDate dob;
+     int userIDTextField;
+     int noOfTicket;
+     String membershipCode;
+     String totalPrice;
 
-    public Ticket(String showsNameComboBox, LocalDate dob, int userIDTextField, int noOfTicket, String membershipCode) {
+    public Ticket(String showsNameComboBox, LocalDate dob, int userIDTextField, int noOfTicket, String membershipCode, String totalPrice) {
         this.showsNameComboBox = showsNameComboBox;
         this.dob = dob;
         this.userIDTextField = userIDTextField;
         this.noOfTicket = noOfTicket;
         this.membershipCode = membershipCode;
+        this.totalPrice = totalPrice;
+        
     }
 
     public String getShowsNameComboBox() {
@@ -45,10 +48,34 @@ public class Ticket {
         return membershipCode;
     }
 
-    @Override
-    public String toString() {
-        return "Ticket{" + "showsNameComboBox=" + showsNameComboBox + ", dob=" + dob + ", userIDTextField=" + userIDTextField + ", noOfTicket=" + noOfTicket + ", membershipCode=" + membershipCode + '}';
+    public String getTotalPrice() {
+        return totalPrice;
     }
+
+    public void setShowsNameComboBox(String showsNameComboBox) {
+        this.showsNameComboBox = showsNameComboBox;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public void setUserIDTextField(int userIDTextField) {
+        this.userIDTextField = userIDTextField;
+    }
+
+    public void setNoOfTicket(int noOfTicket) {
+        this.noOfTicket = noOfTicket;
+    }
+
+    public void setMembershipCode(String membershipCode) {
+        this.membershipCode = membershipCode;
+    }
+
+    public void setTotalPrice(String totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+    
     
     
 }

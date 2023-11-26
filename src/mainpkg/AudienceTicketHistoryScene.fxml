@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
@@ -11,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.AudienceTicketHistorySceneController">
    <children>
-      <AnchorPane layoutX="119.0" layoutY="82.0" prefHeight="329.0" prefWidth="566.0" style="-fx-background-color: White; -fx-background-radius: 7;">
+      <AnchorPane layoutX="119.0" layoutY="82.0" prefHeight="363.0" prefWidth="566.0" style="-fx-background-color: White; -fx-background-radius: 7;">
          <effect>
             <DropShadow />
          </effect>
@@ -22,19 +23,25 @@
                </font>
             </Label>
             <Line endX="452.0" layoutX="101.0" layoutY="44.0" startX="-94.0" strokeWidth="0.5" />
-            <TableView layoutX="26.0" layoutY="65.0" prefHeight="238.0" prefWidth="511.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
+            <TableView fx:id="tableView" layoutX="26.0" layoutY="97.0" prefHeight="247.0" prefWidth="511.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
               <columns>
-                <TableColumn prefWidth="154.0" text="Shows name" />
-                <TableColumn prefWidth="78.0" text="Seat" />
-                  <TableColumn prefWidth="113.0" text="Date" />
-                  <TableColumn prefWidth="165.0" text="Vanue" />
+                <TableColumn fx:id="showsNameCol" prefWidth="140.0" text="Shows name" />
+                <TableColumn fx:id="noOfTicketCol" prefWidth="107.0" text="Ticket Quentity" />
+                  <TableColumn fx:id="dodCol" prefWidth="156.0" text="Date" />
+                  <TableColumn fx:id="priceCol" prefWidth="107.0" text="Price" />
               </columns>
                <effect>
                   <DropShadow height="7.0" radius="3.0" width="7.0" />
                </effect>
             </TableView>
+            <TextField fx:id="searchIDTextField" layoutX="26.0" layoutY="53.0" prefHeight="30.0" prefWidth="240.0" promptText="User ID" style="-fx-background-radius: 7;" />
+            <Button layoutX="328.0" layoutY="53.0" mnemonicParsing="false" onAction="#searchOnClick" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: #279a1c; -fx-background-radius: 7;" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
-      <Button layoutX="33.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE" />
+      <Button layoutX="33.0" layoutY="28.0" mnemonicParsing="false" onAction="#returnHomePage" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE" />
    </children>
 </AnchorPane>

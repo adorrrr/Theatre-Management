@@ -63,7 +63,7 @@ public class AudienceMembershipSceneController implements Initializable {
             {
                 dir.mkdir();
             }               
-            FileWriter fw = new FileWriter(new File(dir, "MembershipData.bin"), true);
+            FileWriter fw = new FileWriter(new File(dir, "MembershipData.txt"), true);
             fw.write(enterUserName.getText() + "\t" +enterUserID.getText()  + "\t" + numberlast4digits.getText() 
             + "\t" +enterUserNumber.getText()+ "\n");
             fw.close();

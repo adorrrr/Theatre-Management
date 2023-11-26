@@ -8,6 +8,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -49,40 +50,34 @@ public class AudienceFeedbackSceneController implements Initializable {
 
     @FXML
     private void submitFeedbackButtonOnClick(ActionEvent event) {
-        File file = null;
+        Feedback i = new Feedback(usernameTextField1.getText(), Integer.parseInt(userIDTextField.getText()), feedbackTextArea.getText());
         FileOutputStream fos = null;
-        DataOutputStream dos = null;
-        
+        ObjectOutputStream oos = null;
+        File f = null;
         try {
-            file = new File("Feedback.bin");
-            if(file.exists()) fos = new FileOutputStream(file,true);
-            else fos = new FileOutputStream(file);           
+            f = new File("Audience Feedback.bin");
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
 
-            dos = new DataOutputStream(fos);
-            
-            dos.writeUTF(userIDTextField.getText());
-            dos.writeUTF(usernameTextField1.getText());
-            dos.writeUTF(feedbackTextArea.getText());
-            // Convert LocalDate to String
-            String formattedDate = LocalDate.now().toString(); 
-            dos.writeUTF(formattedDate);
-            
-            userIDTextField.clear();
-            usernameTextField1.clear();
-            feedbackTextArea.clear();
-        } 
-        
-        catch (IOException ex) {
-            Logger.getLogger(AudienceFeedbackSceneController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        
-        finally {
+            oos.writeObject(i);
+
+        } catch (IOException ex) {
+            Logger.getLogger(AudienceFeedbackSceneController.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        } finally {
             try {
-                if(dos != null) dos.close();
-            } 
-            
-            catch (IOException ex) {
-                Logger.getLogger(AudienceFeedbackSceneController.class.getName()).log(Level.SEVERE, null, ex);
+                if (oos != null) {
+                    oos.close();
+
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(AudienceFeedbackSceneController.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -94,7 +89,7 @@ public class AudienceFeedbackSceneController implements Initializable {
         Stage stg = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stg.setScene(scene);
         stg.show();
-        //change
+        
     }
     
 }

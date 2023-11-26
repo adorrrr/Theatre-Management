@@ -6,13 +6,17 @@ package mainpkg;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +25,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -35,8 +43,17 @@ public class AudienceContactsUsController implements Initializable {
 
     @FXML
     private ComboBox<String> selectVenueCombocox;
-    @FXML
     private TextArea outputTextArea;
+    @FXML
+    private AnchorPane audienceContactsUs;
+    @FXML
+    private TableView<VanueContacts> tableView;
+    @FXML
+    private TableColumn<VanueContacts, String> addressCol;
+    @FXML
+    private TableColumn<VanueContacts, Integer> numberCol;
+    @FXML
+    private TableColumn<VanueContacts, String> mailCol;
 
     /**
      * Initializes the controller class.
@@ -52,70 +69,80 @@ public class AudienceContactsUsController implements Initializable {
     @FXML
     private void selectVenueComboBoxOnItemSelected(ActionEvent event) {
         if(selectVenueCombocox.getValue().equals("Dhaka")) {
-        outputTextArea.setText("");
-        outputTextArea.clear();
-        
-        File f = null;
-        FileReader fw = null;
-        Scanner sc; String str; String[] tokens;
-        
-        try {
-            f = new File("Venue Contacts/Dhaka.txt");
-            sc = new Scanner(f);
-            if(f.exists()){
-                while(sc.hasNextLine()){
-                    str=sc.nextLine();
-                    tokens = str.split(",");
+        ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
+        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
+        addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));
+        numberCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, Integer>("Number"));
+        mailCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Mail"));
 
-                    
-                outputTextArea.appendText(
-                        "Address: " + tokens[0]+"\n"
-                        + "Number: " + tokens[1]+"\n"
-                        + "Mail: " + tokens[2]);
+
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File(".bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            VanueContacts p;
+            try {
+                while (true) {
+                    p = (VanueContacts) ois.readObject();
+                    ContactsList.add(p);
+                    System.out.println(p.toString());
                 }
+            } catch (Exception e) {
             }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
         }
-        
-        catch (IOException ex) {
-            Logger.getLogger(AudienceContactsUsController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        finally {
-        }  
+        tableView.setItems(ContactsList);  
         }
         
         
         else if(selectVenueCombocox.getValue().equals("Chittagong")) {
-        BufferedReader reader = null;
-        try {outputTextArea.clear();
-            //the actual file name and path
-            String fileName = "Venue Contacts/Chittagong.txt";
-            
-            FileReader fileReader = new FileReader(fileName);
-            reader = new BufferedReader(fileReader);
-            
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] tokens = line.split(",");
-                
-                outputTextArea.appendText(
-                        "Address: " + tokens[0]+"\n"
-                        + "Number: " + tokens[1]+"\n"
-                        + "Mail: " + tokens[2]); 
+        ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
+        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
+        addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));
+        numberCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, Integer>("Number"));
+        mailCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Mail"));
+
+
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File(".bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            VanueContacts p;
+            try {
+                while (true) {
+                    p = (VanueContacts) ois.readObject();
+                    ContactsList.add(p);
+                    System.out.println(p.toString());
+                }
+            } catch (Exception e) {
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
         } finally {
             try {
-                if (reader != null) {
-                    reader.close();
+                if (ois != null) {
+                    ois.close();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ex) {
             }
+
         }
-        
-        }else {
-        outputTextArea.clear();
+        tableView.setItems(ContactsList);  
         }
         
 }
