@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.DirectorScheduleSceneController">
    <children>
       <AnchorPane layoutX="81.0" layoutY="52.0" prefHeight="396.0" prefWidth="611.0" style="-fx-background-color: White; -fx-background-radius: 7;">
          <effect>
@@ -24,26 +25,25 @@
                </font>
             </Label>
             <Line endX="490.0" layoutX="109.0" layoutY="43.0" startX="-95.0" strokeWidth="0.5" />
-            <TableView layoutX="48.0" layoutY="159.0" prefHeight="198.0" prefWidth="521.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
+            <TableView fx:id="tableView" layoutX="10.0" layoutY="136.0" prefHeight="222.0" prefWidth="591.0" style="-fx-background-color: #F8F3D4; -fx-background-radius: 5;">
                <columns>
-                  <TableColumn prefWidth="184.0" text="Department" />
-                  <TableColumn prefWidth="167.0" text="Time" />
-                  <TableColumn prefWidth="169.0" text="Date" />
+                  <TableColumn fx:id="departmentCol" prefWidth="164.0" text="Department" />
+                  <TableColumn fx:id="timeCol" prefWidth="125.0" text="Time" />
+                  <TableColumn fx:id="dateCol" prefWidth="148.0" text="Date" />
+                  <TableColumn fx:id="scheduleCol" prefWidth="153.0" text="Schedule" />
                </columns>
                <effect>
                   <DropShadow height="7.0" radius="3.0" width="7.0" />
                </effect>
             </TableView>
-            <Button layoutX="75.0" layoutY="365.0" mnemonicParsing="false" style="-fx-background-color: #367E18;" text="Submit" textFill="WHITE" />
-            <Button layoutX="144.0" layoutY="365.0" mnemonicParsing="false" style="-fx-background-color: #cc1010;" text="Delete" textFill="WHITE" />
-            <Label layoutX="32.0" layoutY="104.0" text="Date" />
-            <DatePicker layoutX="32.0" layoutY="122.0" prefHeight="25.0" prefWidth="267.0" />
-            <Label layoutX="321.0" layoutY="104.0" text="Time" />
-            <TextField layoutX="321.0" layoutY="122.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter Time" />
-            <TextField layoutX="32.0" layoutY="66.0" prefHeight="25.0" prefWidth="267.0" promptText="Department" />
+            <Button layoutX="26.0" layoutY="365.0" mnemonicParsing="false" onAction="#submitOnClick" style="-fx-background-color: #367E18;" text="Submit" textFill="WHITE" />
+            <DatePicker fx:id="dob" layoutX="26.0" layoutY="92.0" prefHeight="30.0" prefWidth="267.0" promptText="Date" style="-fx-background-radius: 7;" />
+            <TextField fx:id="timeTextField" layoutX="317.0" layoutY="92.0" prefHeight="30.0" prefWidth="267.0" promptText="Enter Time" style="-fx-background-radius: 7;" />
+            <TextField fx:id="departmentNameTextFeield" layoutX="26.0" layoutY="52.0" prefHeight="30.0" prefWidth="267.0" promptText="Department" style="-fx-background-radius: 7;" />
+            <ComboBox fx:id="scheduleType" layoutX="317.0" layoutY="52.0" prefHeight="30.0" prefWidth="267.0" style="-fx-background-radius: 7;" />
          </children>
       </AnchorPane>
-      <Button layoutX="25.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
+      <Button layoutX="25.0" layoutY="18.0" mnemonicParsing="false" onAction="#returnHomePage" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
          <effect>
             <DropShadow color="#404040" height="6.0" radius="2.75" spread="0.31" width="7.0" />
          </effect>

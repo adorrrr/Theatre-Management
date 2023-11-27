@@ -4,20 +4,21 @@
  */
 package mainpkg;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  *
  * @author World gate computer
  */
-public class ShowsInfo {
-    private final String text;
-    private final String showName;
-    private final int seat;
-    private final String vanue;
-    public final LocalDate date;
-    private final float price;
-    private final float time;
+public class ShowsInfo implements Serializable{
+     final String text;
+     final String showName;
+     final int seat;
+     final String vanue;
+     final LocalDate date;
+     final float price;
+     final float time;
     
     public ShowsInfo (String text, String showName, int seat, String vanue, LocalDate date, float price, float time )
     {

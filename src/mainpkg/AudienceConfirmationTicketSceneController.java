@@ -20,10 +20,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -32,7 +30,7 @@ import javafx.stage.Stage;
  *
  * @author World gate computer
  */
-public class AudienceTicketHistorySceneController implements Initializable {
+public class AudienceConfirmationTicketSceneController implements Initializable {
 
     @FXML
     private TableView<Ticket> tableView;
@@ -40,37 +38,19 @@ public class AudienceTicketHistorySceneController implements Initializable {
     private TableColumn<Ticket, String> showsNameCol;
     @FXML
     private TableColumn<Ticket, LocalDate> dodCol;
-    @FXML
-    private TableColumn<Ticket, Integer> priceCol;
+    
     @FXML
     private TableColumn<Ticket, Integer> noOfTicketCol;
-    @FXML
-    private TextField searchIDTextField;
 
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
-    }    
-
-    @FXML
-    private void returnHomePage(ActionEvent event) throws IOException {
-        Parent mainLCManagementLogInFormParent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));        
-        Scene mainLCManagementLogInFormScene = new Scene(mainLCManagementLogInFormParent);        
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();       
-        stage.setScene(mainLCManagementLogInFormScene);
-        stage.show();
-    }
-
-    @FXML
-    private void searchOnClick(ActionEvent event) {
         ObservableList<Ticket> TicketList = FXCollections.observableArrayList();
         //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         showsNameCol.setCellValueFactory(new PropertyValueFactory<Ticket, String>("showsNameComboBox"));
         noOfTicketCol.setCellValueFactory(new PropertyValueFactory<Ticket, Integer>("noOfTicket"));
         dodCol.setCellValueFactory(new PropertyValueFactory<Ticket, LocalDate>("dob"));
-        priceCol.setCellValueFactory(new PropertyValueFactory<Ticket, Integer>("totalPrice"));
+        
 
         File f = null;
         FileInputStream fis = null;
@@ -83,16 +63,13 @@ public class AudienceTicketHistorySceneController implements Initializable {
             Ticket p;
             try {
                 while (true) {
-                     p = (Ticket) ois.readObject();
-                    if (String.valueOf(p.getUserIDTextField()).equals(searchIDTextField.getText())) {
-                        TicketList.add(p);
-                    }
-                    
+                    p = (Ticket) ois.readObject();
+                    TicketList.add(p);
+                    System.out.println(p.toString());
                 }
             } catch (Exception e) {
             }
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
         } finally {
             try {
                 if (ois != null) {
@@ -103,6 +80,17 @@ public class AudienceTicketHistorySceneController implements Initializable {
 
         }
         tableView.setItems(TicketList);
+
+    
+    }    
+
+    @FXML
+    private void returnHomePage(ActionEvent event) throws IOException {
+        Parent mainLCManagementLogInFormParent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));        
+        Scene mainLCManagementLogInFormScene = new Scene(mainLCManagementLogInFormParent);        
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();       
+        stage.setScene(mainLCManagementLogInFormScene);
+        stage.show();
     }
     
 }

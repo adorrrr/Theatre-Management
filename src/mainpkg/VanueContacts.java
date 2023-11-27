@@ -9,9 +9,9 @@ package mainpkg;
  * @author World gate computer
  */
 public class VanueContacts {
-    private final String Address;
-    private final int Number;
-    private final String Mail;
+     final String Address;
+     final int Number;
+     final String Mail;
 
     public VanueContacts(String Address, int Number, String Mail) {
         this.Address = Address;

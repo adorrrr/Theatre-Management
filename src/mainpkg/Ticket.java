@@ -4,19 +4,17 @@
  */
 package mainpkg;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- *
- * @author World gate computer
- */
-public class Ticket {
-     String showsNameComboBox;
-     LocalDate dob;
-     int userIDTextField;
-     int noOfTicket;
-     String membershipCode;
-     String totalPrice;
+
+public class Ticket implements Serializable {
+    String showsNameComboBox;
+    LocalDate dob;
+    int userIDTextField;
+    int noOfTicket;
+    String membershipCode;
+    String totalPrice;
 
     public Ticket(String showsNameComboBox, LocalDate dob, int userIDTextField, int noOfTicket, String membershipCode, String totalPrice) {
         this.showsNameComboBox = showsNameComboBox;

@@ -34,18 +34,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
+
+
+
+
 public class AudienceContactsUsController implements Initializable {
 
     @FXML
     private ComboBox<String> selectVenueCombocox;
-    private TextArea outputTextArea;
-    @FXML
-    private AnchorPane audienceContactsUs;
     @FXML
     private TableView<VanueContacts> tableView;
     @FXML
@@ -55,13 +52,14 @@ public class AudienceContactsUsController implements Initializable {
     @FXML
     private TableColumn<VanueContacts, String> mailCol;
 
-    /**
-     * Initializes the controller class.
-     */
+
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         selectVenueCombocox.getItems().addAll("Chittagong",
-                "Dhaka"
+                "Dhaka","Khulna","Sylhet"
                 );
     }    
 
@@ -108,6 +106,80 @@ public class AudienceContactsUsController implements Initializable {
         
         
         else if(selectVenueCombocox.getValue().equals("Chittagong")) {
+        ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
+        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
+        addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));
+        numberCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, Integer>("Number"));
+        mailCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Mail"));
+
+
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File(".bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            VanueContacts p;
+            try {
+                while (true) {
+                    p = (VanueContacts) ois.readObject();
+                    ContactsList.add(p);
+                    System.out.println(p.toString());
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
+        }
+        tableView.setItems(ContactsList);  
+        }
+        else if(selectVenueCombocox.getValue().equals("Khulna")) {
+        ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
+        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
+        addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));
+        numberCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, Integer>("Number"));
+        mailCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Mail"));
+
+
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File(".bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            VanueContacts p;
+            try {
+                while (true) {
+                    p = (VanueContacts) ois.readObject();
+                    ContactsList.add(p);
+                    System.out.println(p.toString());
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
+        }
+        tableView.setItems(ContactsList);  
+        }
+        else if(selectVenueCombocox.getValue().equals("Sylhet")) {
         ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
         //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));

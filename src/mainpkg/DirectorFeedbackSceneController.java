@@ -57,7 +57,7 @@ public class DirectorFeedbackSceneController implements Initializable {
             
             dos.writeUTF(artistNameTextField.getText());
             dos.writeUTF(directorGiveFeedbackTextArea.getText());
-            // Convert LocalDate to String
+            
             String formattedDate = LocalDate.now().toString(); 
             dos.writeUTF(formattedDate);
             

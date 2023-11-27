@@ -77,7 +77,7 @@ public class AudienceDashboardSceneController implements Initializable {
 
     @FXML
     private void ticketPurchaseOnMouseClick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("AudienceMembershipScene.fxml"));
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("AudiencePurchaseTicketsScene.fxml"));
         Scene scene6 = new Scene(mainSceneParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(scene6);

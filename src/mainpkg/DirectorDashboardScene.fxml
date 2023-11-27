@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -27,50 +28,65 @@
                <left>
                   <AnchorPane prefHeight="354.0" prefWidth="129.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button disable="true" layoutY="-3.0" mnemonicParsing="false" opacity="0.7" prefHeight="43.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Home Page" textFill="WHITE">
+                        <Button layoutY="-3.0" mnemonicParsing="false" onAction="#homePageOnClick" opacity="0.7" prefHeight="43.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Home Page" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="11.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button layoutY="80.0" mnemonicParsing="false" onAction="#shiftCheckOnClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Shift Check" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="11.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button layoutY="40.0" mnemonicParsing="false" onAction="#scheduleCheckOnClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Schedule Check" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="11.0" />
                            </font>
                         </Button>
-                        <Button disable="true" layoutY="80.0" mnemonicParsing="false" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Shift Check" textFill="WHITE">
+                        <Button layoutY="160.0" mnemonicParsing="false" onAction="#scriptOnClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Script" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="11.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button layoutY="200.0" mnemonicParsing="false" onAction="#monthlyReportOnClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Monthly Report" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="11.0" />
                            </font>
                         </Button>
-                        <Button disable="true" layoutY="40.0" mnemonicParsing="false" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Schedule Check" textFill="WHITE">
+                        <Button layoutY="120.0" mnemonicParsing="false" onAction="#budgetOnClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Budget" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="11.0" />
                            </font>
                         </Button>
-                        <Button disable="true" layoutY="160.0" mnemonicParsing="false" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Script" textFill="WHITE">
+                        <Button layoutY="240.0" mnemonicParsing="false" onAction="#chatBoxOnClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Chat Box" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="11.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Button>
+                        <Button layoutY="280.0" mnemonicParsing="false" onAction="#rulesAndRegulationsOnClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Rules &amp; Regulations" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="11.0" />
                            </font>
                         </Button>
-                        <Button disable="true" layoutY="200.0" mnemonicParsing="false" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Monthly Report" textFill="WHITE">
+                        <Button layoutY="320.0" mnemonicParsing="false" onAction="#feedbackOnClick" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Feedback" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="11.0" />
                            </font>
-                        </Button>
-                        <Button disable="true" layoutY="120.0" mnemonicParsing="false" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Budget" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="11.0" />
-                           </font>
-                        </Button>
-                        <Button disable="true" layoutY="240.0" mnemonicParsing="false" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Chat Box" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="11.0" />
-                           </font>
-                        </Button>
-                        <Button disable="true" layoutY="280.0" mnemonicParsing="false" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Task Assignment" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="11.0" />
-                           </font>
-                        </Button>
-                        <Button disable="true" layoutY="320.0" mnemonicParsing="false" opacity="0.7" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #891111;" text="Feedback" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="11.0" />
-                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
                         </Button>
                      </children>
                   </AnchorPane>
@@ -116,7 +132,7 @@
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Button layoutX="77.0" layoutY="324.0" mnemonicParsing="false" style="-fx-background-color: #891111;" text="Sign Out" textFill="WHITE">
+                        <Button layoutX="77.0" layoutY="324.0" mnemonicParsing="false" onAction="#signOutOnClick" style="-fx-background-color: #891111;" text="Sign Out" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>

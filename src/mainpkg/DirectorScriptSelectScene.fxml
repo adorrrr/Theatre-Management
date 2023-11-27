@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
@@ -22,9 +22,10 @@
                </font>
             </Label>
             <Line endX="494.0" layoutX="101.0" layoutY="44.0" startX="-100.0" strokeWidth="0.5" />
-            <TextArea layoutX="24.0" layoutY="93.0" prefHeight="301.0" prefWidth="550.0" promptText="Show Script" style="-fx-background-radius: 7;" />
-            <ComboBox fx:id="scriptWriterComboBox" layoutX="23.0" layoutY="54.0" prefHeight="25.0" prefWidth="267.0" promptText="Writer" />
-            <Button layoutX="306.0" layoutY="54.0" mnemonicParsing="false" onAction="#selectScriptOnClick" prefHeight="25.0" prefWidth="267.0" style="-fx-background-color: #367E18;" text="Select" textFill="WHITE" />
+            <TextArea fx:id="writingScriptTextField" layoutX="24.0" layoutY="86.0" prefHeight="295.0" prefWidth="550.0" promptText="Write the Shows script" style="-fx-background-radius: 7;" />
+            <Button layoutX="413.0" layoutY="387.0" mnemonicParsing="false" onAction="#sendScriptOnClick" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #367E18;" text="Send" textFill="WHITE" />
+            <TextField fx:id="writerNameTextField" layoutX="27.0" layoutY="54.0" prefHeight="25.0" prefWidth="267.0" promptText="Writer Name" />
+            <TextField fx:id="showsNameTextField" layoutX="303.0" layoutY="54.0" prefHeight="25.0" prefWidth="267.0" promptText="Shows Name" />
          </children>
       </AnchorPane>
       <Button layoutX="19.0" layoutY="16.0" mnemonicParsing="false" onAction="#returnHomeButtonOnClick" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE" />

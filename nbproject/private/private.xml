@@ -4,8 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/Ticket.java</file>
-            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceMembershipSceneController.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceDashboardSceneController.java</file>
             <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceFeedbackSceneController.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceContactsUsController.java</file>
+            <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudienceTicketHistorySceneController.java</file>
             <file>file:/D:/IUB/Autumn%202023/OOP/OOP%20My%20Project/Theatre-Management/src/mainpkg/AudiencePurchaseTicketsSceneController.java</file>
         </group>
     </open-files>
