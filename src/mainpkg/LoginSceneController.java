@@ -1,13 +1,10 @@
 package mainpkg;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +18,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -38,8 +34,6 @@ public class LoginSceneController implements Initializable {
 
 
     
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         userTypeComboBox.getItems().addAll(
@@ -55,8 +49,51 @@ public class LoginSceneController implements Initializable {
 
     @FXML
     private void loginOnMouseClick(ActionEvent event) throws IOException {
-        //
+        boolean matched = false;
+        String IdNo = idTextField.getText();
+        String password = passwordTextField.getText();
+        String userType = userTypeComboBox.getValue();
+        String filename = "";
+        
+        // Determine the appropriate filename based on the selected userType
+        if (userType.equals("General Manager")) 
+        {
+            filename = "General Manager.txt";
+        } 
+        else if (userType.equals("Producer")) 
+        {
+            filename = "Producer.txt";
+        } 
+        else if (userType.equals("Dirctor"))
+        {
+            filename = "Dirctor.txt";
+        }
+        else if (userType.equals("Production Manager"))
+        {
+            filename = "Production Manager.txt";
+        }
+        else if (userType.equals("Artist"))
+        {
+            filename = "Artist.txt";
+        }
+        else if (userType.equals("Marketing Manager"))
+        {
+            filename = "Marketing Manager.txt";
+        }
+        else if (userType.equals("Venu Manager"))
+        {
+            filename = "Venu Manager.txt";   
+        }
+        else if (userType.equals("Audience"))
+        {
+            filename = "Audience.txt";       // input txt
+        }
+      
+        
+        
     }
+    
+
     @FXML
     private void createNewAccountOnClick(ActionEvent event) throws IOException {
         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("CreateAccountScene.fxml"));
@@ -65,4 +102,5 @@ public class LoginSceneController implements Initializable {
         window.setScene(scene1);
         window.show();
     }
+    
 }
