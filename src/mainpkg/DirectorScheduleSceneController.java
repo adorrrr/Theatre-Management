@@ -19,13 +19,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -59,6 +64,42 @@ public class DirectorScheduleSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         scheduleType.getItems().addAll("Main Shooting", "Practice");
+        
+        
+        ObservableList<SchedulePick> ScheduleList = FXCollections.observableArrayList();
+        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
+        departmentCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, String>("department"));
+        timeCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, Integer>("time"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, LocalDate>("Date"));
+        scheduleCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, String>("schedule"));
+
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        File f = null;
+
+        try {
+            f = new File("SchedulePick.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            SchedulePick p;
+            try {
+                while (true) {
+                    p = (SchedulePick) ois.readObject();
+                    ScheduleList.add(p);
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
+        }
+        tableView.setItems(ScheduleList);
     }    
 
     @FXML
@@ -135,7 +176,12 @@ public class DirectorScheduleSceneController implements Initializable {
     }
 
     @FXML
-    private void returnHomePage(ActionEvent event) {
+    private void returnHomePage(ActionEvent event) throws IOException {
+        Parent mainLCManagementLogInFormParent = FXMLLoader.load(getClass().getResource("DirectorDashboardScene.fxml"));        
+        Scene mainLCManagementLogInFormScene = new Scene(mainLCManagementLogInFormParent);        
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();       
+        stage.setScene(mainLCManagementLogInFormScene);
+        stage.show();
         
     }
     

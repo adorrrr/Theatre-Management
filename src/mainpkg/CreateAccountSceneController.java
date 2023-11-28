@@ -67,128 +67,58 @@ public class CreateAccountSceneController implements Initializable {
 
     @FXML
     private void signUpOnMouseClick(ActionEvent event) throws FileNotFoundException, IOException {
-        if(userTypeComboBox.getValue().equals("Audience")){
-            audienceAndShow();
-            Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-            a1.setTitle("LogIn Status");
-            a1.setContentText("Click Ok to Continue");
-            a1.setHeaderText("Your account has been created successfully");
-            a1.showAndWait();
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                window.setScene(tableViewScene);
-                window.show();                                         
-        }   
-        else if(userTypeComboBox.getValue().equals("Dirctor")){
-            dirctorAndShow(); 
-            Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-            a1.setTitle("LogIn Status");
-            a1.setContentText("Click Ok to Continue");
-            a1.setHeaderText("Your account has been created successfully");
-            a1.showAndWait();
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                window.setScene(tableViewScene);
-                window.show();
-        }
-        else if(userTypeComboBox.getValue().equals("General Manager")){
-            generalManagerAndShow();
-            Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-            a1.setTitle("LogIn Status");
-            a1.setContentText("Click Ok to Continue");
-            a1.setHeaderText("Your account has been created successfully");
-            a1.showAndWait();
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                window.setScene(tableViewScene);
-                window.show();
-        }
-        else if(userTypeComboBox.getValue().equals("Producer")){
-            producerAndShow();
-            Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-            a1.setTitle("LogIn Status");
-            a1.setContentText("Click Ok to Continue");
-            a1.setHeaderText("Your account has been created successfully");
-            a1.showAndWait();
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                window.setScene(tableViewScene);
-                window.show();
-        }
-        else if(userTypeComboBox.getValue().equals("Production Manager")){
-            productionManagerAndShow();
-            Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-            a1.setTitle("LogIn Status");
-            a1.setContentText("Click Ok to Continue");
-            a1.setHeaderText("Your account has been created successfully");
-            a1.showAndWait();
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                window.setScene(tableViewScene);
-                window.show();
-        }
-        else if(userTypeComboBox.getValue().equals("Artist")){
-            artistAndShow();
-            Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-            a1.setTitle("LogIn Status");
-            a1.setContentText("Click Ok to Continue");
-            a1.setHeaderText("Your account has been created successfully");
-            a1.showAndWait();
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                window.setScene(tableViewScene);
-                window.show();
-        }
-        else if(userTypeComboBox.getValue().equals("Marketing Manager")){
-            marketingManagerAndShow();
-            Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-            a1.setTitle("LogIn Status");
-            a1.setContentText("Click Ok to Continue");
-            a1.setHeaderText("Your account has been created successfully");
-            a1.showAndWait();
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                window.setScene(tableViewScene);
-                window.show();
-        }
-        else if(userTypeComboBox.getValue().equals("Venu Manager")){
-            venuManagerAndShow();
-            Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-            a1.setTitle("LogIn Status");
-            a1.setContentText("Click Ok to Continue");
-            a1.setHeaderText("Your account has been created successfully");
-            a1.showAndWait();
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                window.setScene(tableViewScene);
-                window.show();
-        }
-        else {
-                Alert a2 = new Alert(Alert.AlertType.WARNING);
-                a2.setTitle("Warning ");
-                a2.setHeaderText("LogIn Failed");
-//              a2.setContentText("Wrong ID/Password");
-                a2.setContentText("Wrong ID/Password. Please Try Again");
-                a2.showAndWait();
+        if (nameTextField.getText().isEmpty() 
+                || IDTextField.getText().isEmpty() 
+                || passwordTextField.getText().isEmpty() 
+                || dobDatePicker.getValue() == null ){
+            // Show notification to user
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all the information");
+            alert.showAndWait();
+        } else {          
+       User i = new User(nameTextField.getText(),
+                    Integer.parseInt(IDTextField.getText()),
+                    passwordTextField.getText(),
+                    dobDatePicker.getValue(),
+                    userTypeComboBox.getValue());
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        File f = null;
+        try {
+            f = new File("Signup Info.bin");
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
             }
-    
-    } 
+
+            oos.writeObject(i);
+
+        } catch (IOException ex) {
+            Logger.getLogger(CreateAccountSceneController.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (oos != null) {
+                    oos.close();
+
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(CreateAccountSceneController.class
+                        .getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+ }     
+       
+       
+        
+      
+     
     
     
     
@@ -200,386 +130,7 @@ public class CreateAccountSceneController implements Initializable {
         window.setScene(scene1);
         window.show();
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    private void audienceAndShow() throws IOException {
-        File file = new File("Signup Info/Audience.bin");
-        if (file.exists()){
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split("\t");
-                if (data[1].equals(IDTextField.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("ID already exists.");
-                    alert.showAndWait();
-                    return;
-                }
-            }
-            scanner.close();
-        }
-        if (nameTextField.getText().isEmpty() 
-                || IDTextField.getText().isEmpty() 
-                || passwordTextField.getText().isEmpty() 
-                || dobDatePicker.getValue() == null ){
-            // Show notification to user
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the information");
-            alert.showAndWait();
-        } else {
-            // saving data for login        
-            File dir = new File("Signup Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "Audience.bin"), true);
-            fw.write(nameTextField.getText() + "\t" +IDTextField.getText()  + "\t" + passwordTextField.getText() 
-            + "\t" +dobDatePicker.getValue()+ "\n");
-            fw.close();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Your account has been created successfully");
-                                         
-            }
-    }
-    
-    
-    private void dirctorAndShow() throws IOException {
-        File file = new File("Signup Info/Dirctor.txt");
-        if (file.exists()){
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split("\t");
-                if (data[1].equals(IDTextField.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("ID already exists.");
-                    alert.showAndWait();
-                    return;
-                }
-            }
-            scanner.close();
-        }
-        if (nameTextField.getText().isEmpty() 
-                || IDTextField.getText().isEmpty() 
-                || passwordTextField.getText().isEmpty() 
-                || dobDatePicker.getValue() == null ){
-            // Show notification to user
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the information");
-            alert.showAndWait();
-        } else {
-            // saving data for login        
-            File dir = new File("Signup Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "Dirctor.txt"), true);
-            fw.write(nameTextField.getText() + "\t" +IDTextField.getText()  + "\t" + passwordTextField.getText() 
-            + "\t" +dobDatePicker.getValue()+ "\n");
-            fw.close();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Your account has been created successfully");
-                                         
-            }
-    }
-    
-    
-    private void generalManagerAndShow() throws IOException {
-        File file = new File("Signup Info/General Manager.txt");
-        if (file.exists()){
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split("\t");
-                if (data[1].equals(IDTextField.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("ID already exists.");
-                    alert.showAndWait();
-                    return;
-                }
-            }
-            scanner.close();
-        }
-        if (nameTextField.getText().isEmpty() 
-                || IDTextField.getText().isEmpty() 
-                || passwordTextField.getText().isEmpty() 
-                || dobDatePicker.getValue() == null ){
-            // Show notification to user
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the information");
-            alert.showAndWait();
-        } else {
-            // saving data for login        
-            File dir = new File("Signup Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "General Manager.txt"), true);
-            fw.write(nameTextField.getText() + "\t" +IDTextField.getText()  + "\t" + passwordTextField.getText() 
-            + "\t" +dobDatePicker.getValue()+ "\n");
-            fw.close();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Your account has been created successfully");
-                                         
-            }
-    }
-    
-    
-    private void producerAndShow() throws IOException {
-        File file = new File("Signup Info/Producer.txt");
-        if (file.exists()){
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split("\t");
-                if (data[1].equals(IDTextField.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("ID already exists.");
-                    alert.showAndWait();
-                    return;
-                }
-            }
-            scanner.close();
-        }
-        if (nameTextField.getText().isEmpty() 
-                || IDTextField.getText().isEmpty() 
-                || passwordTextField.getText().isEmpty() 
-                || dobDatePicker.getValue() == null ){
-            // Show notification to user
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the information");
-            alert.showAndWait();
-        } else {
-            // saving data for login        
-            File dir = new File("Signup Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "Producer.txt"), true);
-            fw.write(nameTextField.getText() + "\t" +IDTextField.getText()  + "\t" + passwordTextField.getText() 
-            + "\t" +dobDatePicker.getValue()+ "\n");
-            fw.close();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Your account has been created successfully");
-                                         
-            }
-    }
-    
-    
-    private void productionManagerAndShow() throws IOException {
-        File file = new File("Signup Info/Production Manager.txt");
-        if (file.exists()){
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split("\t");
-                if (data[1].equals(IDTextField.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("ID already exists.");
-                    alert.showAndWait();
-                    return;
-                }
-            }
-            scanner.close();
-        }
-        if (nameTextField.getText().isEmpty() 
-                || IDTextField.getText().isEmpty() 
-                || passwordTextField.getText().isEmpty() 
-                || dobDatePicker.getValue() == null ){
-            // Show notification to user
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the information");
-            alert.showAndWait();
-        } else {
-            // saving data for login        
-            File dir = new File("Signup Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "Production Manager.txt"), true);
-            fw.write(nameTextField.getText() + "\t" +IDTextField.getText()  + "\t" + passwordTextField.getText() 
-            + "\t" +dobDatePicker.getValue()+ "\n");
-            fw.close();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Your account has been created successfully");
-                                         
-            }
-    }
-    
-    
-    private void artistAndShow() throws IOException {
-        File file = new File("Signup Info/Artist.txt");
-        if (file.exists()){
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split("\t");
-                if (data[1].equals(IDTextField.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("ID already exists.");
-                    alert.showAndWait();
-                    return;
-                }
-            }
-            scanner.close();
-        }
-        if (nameTextField.getText().isEmpty() 
-                || IDTextField.getText().isEmpty() 
-                || passwordTextField.getText().isEmpty() 
-                || dobDatePicker.getValue() == null ){
-            // Show notification to user
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the information");
-            alert.showAndWait();
-        } else {
-            // saving data for login        
-            File dir = new File("Signup Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "Artist.txt"), true);
-            fw.write(nameTextField.getText() + "\t" +IDTextField.getText()  + "\t" + passwordTextField.getText() 
-            + "\t" +dobDatePicker.getValue()+ "\n");
-            fw.close();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Your account has been created successfully");
-                                         
-            }
-    }
-    
-    
-    private void marketingManagerAndShow() throws IOException {
-        File file = new File("Signup Info/Marketing Manager.txt");
-        if (file.exists()){
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split("\t");
-                if (data[1].equals(IDTextField.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("ID already exists.");
-                    alert.showAndWait();
-                    return;
-                }
-            }
-            scanner.close();
-        }
-        if (nameTextField.getText().isEmpty() 
-                || IDTextField.getText().isEmpty() 
-                || passwordTextField.getText().isEmpty() 
-                || dobDatePicker.getValue() == null ){
-            // Show notification to user
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the information");
-            alert.showAndWait();
-        } else {
-            // saving data for login        
-            File dir = new File("Signup Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "Marketing Manager.txt"), true);
-            fw.write(nameTextField.getText() + "\t" +IDTextField.getText()  + "\t" + passwordTextField.getText() 
-            + "\t" +dobDatePicker.getValue()+ "\n");
-            fw.close();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Your account has been created successfully");
-                                         
-            }
-    }
-    
-    
-    private void venuManagerAndShow() throws IOException {
-        File file = new File("Signup Info/Venu Manager.txt");
-        if (file.exists()){
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split("\t");
-                if (data[1].equals(IDTextField.getText())) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("ID already exists.");
-                    alert.showAndWait();
-                    return;
-                }
-            }
-            scanner.close();
-        }
-        if (nameTextField.getText().isEmpty() 
-                || IDTextField.getText().isEmpty() 
-                || passwordTextField.getText().isEmpty() 
-                || dobDatePicker.getValue() == null ){
-            // Show notification to user
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the information");
-            alert.showAndWait();
-        } else {
-            // saving data for login        
-            File dir = new File("Signup Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "Venu Manager.txt"), true);
-            fw.write(nameTextField.getText() + "\t" +IDTextField.getText()  + "\t" + passwordTextField.getText() 
-            + "\t" +dobDatePicker.getValue()+ "\n");
-            fw.close();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Your account has been created successfully");
-                                         
-            }
-    }
 
+} 
     
-
     
-}

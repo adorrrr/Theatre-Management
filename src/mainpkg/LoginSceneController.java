@@ -1,10 +1,13 @@
 package mainpkg;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +21,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -51,21 +55,8 @@ public class LoginSceneController implements Initializable {
 
     @FXML
     private void loginOnMouseClick(ActionEvent event) throws IOException {
-        if(userTypeComboBox.getValue() == null) {
-            Alert();
-        }
-        else if(idTextField.getText().isEmpty()) {
-            Alert();
-        }
-        else if(passwordTextField.getText().isEmpty()) {
-            Alert();
-        }
-        
-        
-        
+        //
     }
-    
-
     @FXML
     private void createNewAccountOnClick(ActionEvent event) throws IOException {
         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("CreateAccountScene.fxml"));
@@ -74,12 +65,4 @@ public class LoginSceneController implements Initializable {
         window.setScene(scene1);
         window.show();
     }
-    private void Alert(){
-    Alert a1 = new Alert(Alert.AlertType.INFORMATION);
-    a1.setTitle("LogIn Status");
-    a1.setContentText("Click Ok to Continue");
-    a1.setHeaderText("Welcome ");
-    a1.showAndWait();
-    }
-    
 }
