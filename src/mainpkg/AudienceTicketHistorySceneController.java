@@ -56,10 +56,10 @@ public class AudienceTicketHistorySceneController implements Initializable {
 
     @FXML
     private void returnHomePage(ActionEvent event) throws IOException {
-        Parent mainLCManagementLogInFormParent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));        
-        Scene mainLCManagementLogInFormScene = new Scene(mainLCManagementLogInFormParent);        
+        Parent Parent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));        
+        Scene Scene = new Scene(Parent);        
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();       
-        stage.setScene(mainLCManagementLogInFormScene);
+        stage.setScene(Scene);
         stage.show();
     }
 

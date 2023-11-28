@@ -1,5 +1,6 @@
 package mainpkg;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -49,51 +50,307 @@ public class LoginSceneController implements Initializable {
 
     @FXML
     private void loginOnMouseClick(ActionEvent event) throws IOException {
-        boolean matched = false;
-        String IdNo = idTextField.getText();
-        String password = passwordTextField.getText();
-        String userType = userTypeComboBox.getValue();
-        String filename = "";
-        
-        // Determine the appropriate filename based on the selected userType
-        if (userType.equals("General Manager")) 
-        {
-            filename = "General Manager.txt";
-        } 
-        else if (userType.equals("Producer")) 
-        {
-            filename = "Producer.txt";
-        } 
-        else if (userType.equals("Dirctor"))
-        {
-            filename = "Dirctor.txt";
+        if(userTypeComboBox.getValue().equals("General Manager")){
+            File f = null;
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+        try {
+            f = new File("General Manager.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            User p;
+            try {
+                while (true) {
+                    p = (User) ois.readObject();
+                    if (String.valueOf(p.getID()).equals(idTextField.getText()) && p.getPassword().equals(passwordTextField.getText())) {
+                        Parent A = FXMLLoader.load(getClass().getResource(".fxml"));
+                        Scene sceneA = new Scene(A);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(sceneA);                      
+                        stage.show();
+                    }else {
+                        Alert();
+                        }
+                    
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
         }
-        else if (userType.equals("Production Manager"))
-        {
-            filename = "Production Manager.txt";
+    }
+        if(userTypeComboBox.getValue().equals("Producer")){
+            File f = null;
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+        try {
+            f = new File("Producer.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            User p;
+            try {
+                while (true) {
+                    p = (User) ois.readObject();
+                    if (String.valueOf(p.getID()).equals(idTextField.getText()) && p.getPassword().equals(passwordTextField.getText())) {
+                        Parent A = FXMLLoader.load(getClass().getResource(".fxml"));
+                        Scene sceneA = new Scene(A);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(sceneA);                      
+                        stage.show();
+                    }else {
+                        Alert();
+                        }
+                    
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
         }
-        else if (userType.equals("Artist"))
-        {
-            filename = "Artist.txt";
+    }
+        if(userTypeComboBox.getValue().equals("Dirctor")){
+            File f = null;
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+        try {
+            f = new File("Dirctor.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            User p;
+            try {
+                while (true) {
+                    p = (User) ois.readObject();
+                    if (String.valueOf(p.getID()).equals(idTextField.getText()) && p.getPassword().equals(passwordTextField.getText())) {
+                        Parent A = FXMLLoader.load(getClass().getResource("DirectorDashboardScene.fxml"));
+                        Scene sceneA = new Scene(A);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(sceneA);                      
+                        stage.show();
+                    }else {
+                        Alert();
+                        }
+                    
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
         }
-        else if (userType.equals("Marketing Manager"))
-        {
-            filename = "Marketing Manager.txt";
+    }
+        if(userTypeComboBox.getValue().equals("Production Manager")){
+            File f = null;
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+        try {
+            f = new File("Production Manager.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            User p;
+            try {
+                while (true) {
+                    p = (User) ois.readObject();
+                    if (String.valueOf(p.getID()).equals(idTextField.getText()) && p.getPassword().equals(passwordTextField.getText())) {
+                        Parent A = FXMLLoader.load(getClass().getResource(".fxml"));
+                        Scene sceneA = new Scene(A);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(sceneA);                      
+                        stage.show();
+                    }else {
+                        Alert();
+                        }
+                    
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
         }
-        else if (userType.equals("Venu Manager"))
-        {
-            filename = "Venu Manager.txt";   
+    }
+        if(userTypeComboBox.getValue().equals("Artist")){
+            File f = null;
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+        try {
+            f = new File("Artist.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            User p;
+            try {
+                while (true) {
+                    p = (User) ois.readObject();
+                    if (String.valueOf(p.getID()).equals(idTextField.getText()) && p.getPassword().equals(passwordTextField.getText())) {
+                        Parent A = FXMLLoader.load(getClass().getResource(".fxml"));
+                        Scene sceneA = new Scene(A);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(sceneA);                      
+                        stage.show();
+                    }else {
+                        Alert();
+                        }
+                    
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
         }
-        else if (userType.equals("Audience"))
-        {
-            filename = "Audience.txt";       // input txt
+    }
+        if(userTypeComboBox.getValue().equals("Marketing Manager")){
+            File f = null;
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+        try {
+            f = new File("Marketing Manager.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            User p;
+            try {
+                while (true) {
+                    p = (User) ois.readObject();
+                    if (String.valueOf(p.getID()).equals(idTextField.getText()) && p.getPassword().equals(passwordTextField.getText())) {
+                        Parent A = FXMLLoader.load(getClass().getResource(".fxml"));
+                        Scene sceneA = new Scene(A);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(sceneA);                      
+                        stage.show();
+                    }else {
+                        Alert();
+                        }
+                    
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
         }
-      
-        
-        
+    }
+        if(userTypeComboBox.getValue().equals("Venu Manager")){
+            File f = null;
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+        try {
+            f = new File("Venu Manager.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            User p;
+            try {
+                while (true) {
+                    p = (User) ois.readObject();
+                    if (String.valueOf(p.getID()).equals(idTextField.getText()) && p.getPassword().equals(passwordTextField.getText())) {
+                        Parent A = FXMLLoader.load(getClass().getResource(".fxml"));
+                        Scene sceneA = new Scene(A);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(sceneA);                      
+                        stage.show();
+                    }else {
+                        Alert();
+                        }
+                    
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
+        }
+    }
+        if(userTypeComboBox.getValue().equals("Audience")){
+            File f = null;
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+
+        try {
+            f = new File("Audience.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            User p;
+            try {
+                while (true) {
+                    p = (User) ois.readObject();
+                    if (String.valueOf(p.getID()).equals(idTextField.getText()) && p.getPassword().equals(passwordTextField.getText())) {
+                        Parent A = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));
+                        Scene sceneA = new Scene(A);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(sceneA);                      
+                        stage.show();
+                    } else {
+                        Alert();
+                        }
+                    
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
+        }
     }
     
-
+ 
+    
+    
+    }
     @FXML
     private void createNewAccountOnClick(ActionEvent event) throws IOException {
         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("CreateAccountScene.fxml"));
@@ -102,5 +359,13 @@ public class LoginSceneController implements Initializable {
         window.setScene(scene1);
         window.show();
     }
+    
+    private void Alert(){
+        Alert a2 = new Alert(Alert.AlertType.WARNING);
+        a2.setTitle("Warning ");
+        a2.setHeaderText("LogIn Failed");
+        a2.setContentText("Wrong ID/Password. Please Try Again");
+        a2.showAndWait();
+        }
     
 }
