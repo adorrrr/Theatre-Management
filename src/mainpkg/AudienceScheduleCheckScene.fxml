@@ -41,7 +41,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Button layoutX="19.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
+      <Button layoutX="19.0" layoutY="20.0" mnemonicParsing="false" onAction="#returnHomePage" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
          <effect>
             <DropShadow color="#404040" height="6.0" radius="2.75" spread="0.31" width="7.0" />
          </effect>

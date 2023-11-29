@@ -18,9 +18,9 @@ public class ShowsInfo implements Serializable{
      final String vanue;
      final LocalDate date;
      final float price;
-     final float time;
+     final String time;
     
-    public ShowsInfo (String text, String showName, int seat, String vanue, LocalDate date, float price, float time )
+    public ShowsInfo (String text, String showName, int seat, String vanue, LocalDate date, float price, String time )
     {
         this.text = text;
         this.showName = showName;
@@ -55,7 +55,7 @@ public class ShowsInfo implements Serializable{
         return price;
     }
 
-    public float getTime() {
+    public String getTime() {
         return time;
     }
     

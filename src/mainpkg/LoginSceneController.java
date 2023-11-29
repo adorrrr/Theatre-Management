@@ -346,9 +346,7 @@ public class LoginSceneController implements Initializable {
 
         }
     }
-    
- 
-    
+
     
     }
     @FXML
