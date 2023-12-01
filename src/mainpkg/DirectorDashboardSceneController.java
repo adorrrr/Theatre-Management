@@ -76,7 +76,7 @@ public class DirectorDashboardSceneController implements Initializable {
 
     @FXML
     private void budgetOnClick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("DirectorBudgetScene.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(scene1);

@@ -359,7 +359,7 @@ public class LoginSceneController implements Initializable {
     }
     
     private void Alert(){
-        Alert a2 = new Alert(Alert.AlertType.WARNING);
+        Alert a2 = new Alert(Alert.AlertType.ERROR);
         a2.setTitle("Warning ");
         a2.setHeaderText("LogIn Failed");
         a2.setContentText("Wrong ID/Password. Please Try Again");

@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.DirectorBudgetSceneController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="94.0" layoutY="47.0" prefHeight="404.0" prefWidth="600.0" style="-fx-background-color: White;">
+         <children>
+            <PieChart fx:id="pieChart" layoutX="68.0" layoutY="14.0" prefHeight="281.0" prefWidth="466.0" style="-fx-border-color: blue;" title="Director Budget" />
+            <TextField fx:id="newIDepName" layoutX="113.0" layoutY="308.0" promptText="Department" />
+            <TextField fx:id="newBudgetValue" layoutX="312.0" layoutY="306.0" promptText="Budget" />
+            <Button layoutX="236.0" layoutY="349.0" mnemonicParsing="false" onAction="#addNewBudgetToChartOnClick" text="Add budget to Chart" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Button layoutX="24.0" layoutY="18.0" mnemonicParsing="false" onAction="#returHomePage" prefHeight="23.0" prefWidth="38.0" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
+         <effect>
+            <DropShadow color="#404040" height="6.0" radius="2.75" spread="0.31" width="7.0" />
+         </effect>
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

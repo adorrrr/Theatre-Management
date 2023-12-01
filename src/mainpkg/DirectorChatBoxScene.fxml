@@ -5,19 +5,23 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="763.0" style="-fx-background-color: #F8F3D4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.DirectorChatBoxSceneController">
    <children>
-      <Button layoutX="28.0" layoutY="21.0" mnemonicParsing="false" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
+      <Button layoutX="17.0" layoutY="19.0" mnemonicParsing="false" onAction="#returnHomePage" prefHeight="16.0" prefWidth="35.0" style="-fx-background-color: #B05B3B;" text="&lt;&lt;" textFill="WHITE">
          <effect>
             <DropShadow color="#404040" height="6.0" radius="2.75" spread="0.31" width="7.0" />
          </effect>
+         <font>
+            <Font size="11.0" />
+         </font>
       </Button>
-      <AnchorPane layoutX="64.0" layoutY="64.0" prefHeight="376.0" prefWidth="656.0" style="-fx-background-color: White; -fx-background-radius: 7;">
+      <AnchorPane layoutX="67.0" layoutY="58.0" prefHeight="401.0" prefWidth="656.0" style="-fx-background-color: White; -fx-background-radius: 7;">
          <effect>
             <DropShadow />
          </effect>
@@ -28,14 +32,19 @@
                </font>
             </Label>
             <Line endX="536.0" layoutX="104.0" layoutY="38.0" startX="-91.0" startY="-1.0" strokeWidth="0.5" />
-            <Button layoutX="561.0" layoutY="321.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="64.0" style="-fx-background-color: #367E18;" text="Sent" textFill="WHITE" />
-            <TextArea layoutX="32.0" layoutY="285.0" prefHeight="67.0" prefWidth="468.0" promptText="Write your message" />
-            <TableView layoutX="32.0" layoutY="50.0" prefHeight="218.0" prefWidth="593.0">
+            <Button layoutX="561.0" layoutY="321.0" mnemonicParsing="false" onAction="#massageSentOnChick" prefHeight="32.0" prefWidth="64.0" style="-fx-background-color: #367E18;" text="Sent" textFill="WHITE" />
+            <TextArea fx:id="messageTextField" layoutX="32.0" layoutY="317.0" prefHeight="67.0" prefWidth="468.0" promptText="Write your message" />
+            <TableView fx:id="tableView" layoutX="32.0" layoutY="50.0" prefHeight="218.0" prefWidth="593.0">
               <columns>
-                <TableColumn prefWidth="592.0" text="Massage " />
+                <TableColumn fx:id="departmentCol" prefWidth="94.0" text="Department" />
+                  <TableColumn fx:id="messageCol" prefWidth="498.0" text="Massage" />
               </columns>
             </TableView>
-            <Button layoutX="519.0" layoutY="283.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Load Notification" />
+            <Button layoutX="510.0" layoutY="283.0" mnemonicParsing="false" onAction="#loadOnClick" prefHeight="31.0" prefWidth="123.0" text="Load Notification">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <TextField fx:id="depaetmentTextField" layoutX="32.0" layoutY="279.0" prefHeight="31.0" prefWidth="468.0" promptText="Write your department" />
          </children>
       </AnchorPane>
    </children>

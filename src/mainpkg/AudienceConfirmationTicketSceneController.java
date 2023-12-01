@@ -46,7 +46,7 @@ public class AudienceConfirmationTicketSceneController implements Initializable 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList<Ticket> TicketList = FXCollections.observableArrayList();
-        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
+        // formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         showsNameCol.setCellValueFactory(new PropertyValueFactory<Ticket, String>("showsNameComboBox"));
         noOfTicketCol.setCellValueFactory(new PropertyValueFactory<Ticket, Integer>("noOfTicket"));
         dodCol.setCellValueFactory(new PropertyValueFactory<Ticket, LocalDate>("dob"));
