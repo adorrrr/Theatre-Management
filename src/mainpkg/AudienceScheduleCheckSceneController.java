@@ -21,29 +21,21 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
+
+
 public class AudienceScheduleCheckSceneController implements Initializable {
 
-    @FXML
-    private TableView<ShowsInfo> tableView;
-    @FXML
-    private TableColumn<ShowsInfo, String> showNameColumn;
-    @FXML
-    private TableColumn<ShowsInfo, String> vanueColumn;
-    @FXML
-    private TableColumn<ShowsInfo, LocalDate> dateColumn;
-    @FXML
-    private TableColumn<ShowsInfo, String> timeColumn;
-    @FXML
-    private TableColumn<ShowsInfo, Float> priceColumn;
+    @FXML private TableView<ShowsInfo> tableView;
+    @FXML private TableColumn<ShowsInfo, String> showNameColumn;
+    @FXML private TableColumn<ShowsInfo, String> vanueColumn;
+    @FXML private TableColumn<ShowsInfo, LocalDate> dateColumn;
+    @FXML private TableColumn<ShowsInfo, String> timeColumn;
+    @FXML private TableColumn<ShowsInfo, Float> priceColumn;
 
-    /**
-     * Initializes the controller class.
-     */
+
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
@@ -51,7 +43,6 @@ public class AudienceScheduleCheckSceneController implements Initializable {
     @FXML
     private void addTableViewOnClick(ActionEvent event) throws IOException {
         ObservableList<ShowsInfo>ShowList= FXCollections.observableArrayList();
-        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         showNameColumn.setCellValueFactory(new PropertyValueFactory<ShowsInfo,String>("showName"));
         vanueColumn.setCellValueFactory(new PropertyValueFactory<ShowsInfo,String>("vanue"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<ShowsInfo,LocalDate>("date"));

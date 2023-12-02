@@ -5,10 +5,14 @@
 package mainpkg;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,30 +54,58 @@ public class AudienceMembershipSceneController implements Initializable {
                 || enterUserID.getText().isEmpty() 
                 || numberlast4digits.getText().isEmpty() 
                 || enterUserNumber.getText().isEmpty()){
-            // Show notification to user
+
+            
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Please fill all the information");
             alert.showAndWait();
+            
+            
         }else {
-            // saving data for login        
-            File dir = new File("Membership Info");
-            if(!dir.exists()) 
-            {
-                dir.mkdir();
-            }               
-            FileWriter fw = new FileWriter(new File(dir, "MembershipData.txt"), true);
-            fw.write(enterUserName.getText() + "\t" +enterUserID.getText()  + "\t" + numberlast4digits.getText() 
-            + "\t" +enterUserNumber.getText()+ "\n");
-            fw.close();
+            Membership i = new Membership(enterUserName.getText(),
+                    Integer.parseInt(enterUserID.getText()),
+                    Integer.parseInt(numberlast4digits.getText()),
+                    Integer.parseInt(enterUserNumber.getText()));
+            
+            
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        File f = null;
+        try {
+            f = new File("Membership.bin");
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(i);
             Alert a1 = new Alert(Alert.AlertType.INFORMATION);
             a1.setTitle("Membership Status");
             a1.setContentText("Membership code : 555222888");
             a1.setHeaderText("Apply for membership has been created successfully");
             a1.showAndWait();
-                                         
+
+        } catch (IOException ex) {
+            Logger.getLogger(AudienceMembershipSceneController.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (oos != null) {
+                    oos.close();
+
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(AudienceMembershipSceneController.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        
+        }
     }
     @FXML
     private void returnHomePage(ActionEvent event) throws IOException {
