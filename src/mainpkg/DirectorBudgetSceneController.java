@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
+
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -28,19 +25,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author User
- */
+
+
+
 public class DirectorBudgetSceneController implements Initializable {
 
-    @FXML
-    private PieChart pieChart;
-    @FXML
-    private TextField newIDepName;
-    @FXML
-    private TextField newBudgetValue;
+    @FXML private PieChart pieChart;
+    @FXML private TextField newIDepName;
+    @FXML private TextField newBudgetValue;
 
     
     
@@ -51,9 +43,7 @@ public class DirectorBudgetSceneController implements Initializable {
 
     @FXML
     private void addNewBudgetToChartOnClick(ActionEvent event) {  
-        PieChart.Data newBudget = 
-            new PieChart.Data(
-                newIDepName.getText(),
+        PieChart.Data newBudget =new PieChart.Data(newIDepName.getText(),
                 Double.parseDouble(newBudgetValue.getText()));
         pieChart.getData().add(newBudget);
         
@@ -63,7 +53,7 @@ public class DirectorBudgetSceneController implements Initializable {
         DataOutputStream dos = null;
         
         try {
-            dic = new File("Budget.bin");
+            dic = new File("cost.bin");
             if(dic.exists()) fos = new FileOutputStream(dic,true);
             else fos = new FileOutputStream(dic);           
 
@@ -80,7 +70,7 @@ public class DirectorBudgetSceneController implements Initializable {
         } 
         
         catch (IOException ex) {
-            Logger.getLogger(DirectorFeedbackSceneController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DirectorBudgetSceneController.class.getName()).log(Level.SEVERE, null, ex);
         } 
         
         finally {
@@ -89,7 +79,7 @@ public class DirectorBudgetSceneController implements Initializable {
             } 
             
             catch (IOException ex) {
-                Logger.getLogger(DirectorFeedbackSceneController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DirectorBudgetSceneController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

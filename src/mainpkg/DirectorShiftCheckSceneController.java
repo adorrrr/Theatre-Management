@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,27 +22,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
+
+
 public class DirectorShiftCheckSceneController implements Initializable {
 
-    @FXML
-    private TableView<EmployeeShift> tableView;
-    @FXML
-    private TableColumn<EmployeeShift, String> nameCol;
-    @FXML
-    private TableColumn<EmployeeShift, String> departmentCol;
-    @FXML
-    private TableColumn<EmployeeShift, LocalDate> dateCol;
-    @FXML
-    private TableColumn<EmployeeShift, String> stratCol;
-    @FXML
-    private TableColumn<EmployeeShift, String> endCol;
-    @FXML
-    private TableColumn<EmployeeShift, String> presenceCol;
+    @FXML private TableView<EmployeeShift> tableView;
+    @FXML private TableColumn<EmployeeShift, String> nameCol;
+    @FXML private TableColumn<EmployeeShift, String> departmentCol;
+    @FXML private TableColumn<EmployeeShift, LocalDate> dateCol;
+    @FXML private TableColumn<EmployeeShift, String> stratCol;
+    @FXML private TableColumn<EmployeeShift, String> endCol;
+    @FXML private TableColumn<EmployeeShift, String> presenceCol;
 
 
     
@@ -66,6 +54,7 @@ public class DirectorShiftCheckSceneController implements Initializable {
     @FXML
     private void loadOnClick(ActionEvent event) {
         ObservableList<EmployeeShift> EmployeList = FXCollections.observableArrayList();
+        
         nameCol.setCellValueFactory(new PropertyValueFactory<EmployeeShift, String>("name"));
         departmentCol.setCellValueFactory(new PropertyValueFactory<EmployeeShift, String>("department"));
         dateCol.setCellValueFactory(new PropertyValueFactory<EmployeeShift, LocalDate>("date"));
@@ -79,7 +68,7 @@ public class DirectorShiftCheckSceneController implements Initializable {
         ObjectInputStream ois = null;
 
         try {
-            f = new File(".bin");
+            f = new File("employeeShifts.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             EmployeeShift p;

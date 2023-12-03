@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
+
+
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -28,31 +26,23 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
+
+
+
 public class AudiencePurchaseTicketsSceneController implements Initializable {
 
-    @FXML
-    private ComboBox<String> showsNameComboBox;
-    @FXML
-    private DatePicker dob;
-    @FXML
-    private ComboBox<Integer> noOfTicket;
-    @FXML
-    private TextField membershipCode;
-    @FXML
-    private TextField userIDTextField;
-    @FXML
-    private Label totalPrice;
-    @FXML
-    private ComboBox<String> membershipComboBox;
+    @FXML private ComboBox<String> showsNameComboBox;
+    @FXML private DatePicker dob;
+    @FXML private ComboBox<Integer> noOfTicket;
+    @FXML private TextField membershipCode;
+    @FXML private TextField userIDTextField;
+    @FXML private Label totalPrice;
+    @FXML private ComboBox<String> membershipComboBox;
 
-    /**
-     * Initializes the controller class.
-     */
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         showsNameComboBox.getItems().addAll("Nabanna", "Dharmashok","Gobheer Asukh", "Dakghar");
@@ -62,6 +52,7 @@ public class AudiencePurchaseTicketsSceneController implements Initializable {
         
     }    
 
+    
     @FXML
     private void returnHomePage(ActionEvent event) throws IOException {
         Parent mainLCManagementLogInFormParent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));        
@@ -71,6 +62,8 @@ public class AudiencePurchaseTicketsSceneController implements Initializable {
         stage.show();
     }
 
+    
+    
     @FXML
     private void purchaseOnClick(ActionEvent event) {
         Ticket i = new Ticket(showsNameComboBox.getValue(),
@@ -95,7 +88,7 @@ public class AudiencePurchaseTicketsSceneController implements Initializable {
             oos.writeObject(i);
 
         } catch (IOException ex) {
-            Logger.getLogger(AudienceFeedbackSceneController.class
+            Logger.getLogger(AudiencePurchaseTicketsSceneController.class
                     .getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
@@ -104,13 +97,15 @@ public class AudiencePurchaseTicketsSceneController implements Initializable {
 
                 }
             } catch (IOException ex) {
-                Logger.getLogger(AudienceFeedbackSceneController.class
+                Logger.getLogger(AudiencePurchaseTicketsSceneController.class
                         .getName()).log(Level.SEVERE, null, ex);
             }
         }
         
     }
 
+    
+    
     @FXML
     private void membershipOnCilck(ActionEvent event) {
         if(

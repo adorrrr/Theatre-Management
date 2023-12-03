@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
 
 import java.io.File;
@@ -25,28 +21,20 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
+
+
 public class AudienceConfirmationTicketSceneController implements Initializable {
 
-    @FXML
-    private TableView<Ticket> tableView;
-    @FXML
-    private TableColumn<Ticket, String> showsNameCol;
-    @FXML
-    private TableColumn<Ticket, LocalDate> dodCol;
-    
-    @FXML
-    private TableColumn<Ticket, Integer> noOfTicketCol;
+    @FXML private TableView<Ticket> tableView;
+    @FXML private TableColumn<Ticket, String> showsNameCol;
+    @FXML private TableColumn<Ticket, LocalDate> dodCol;
+    @FXML private TableColumn<Ticket, Integer> noOfTicketCol;
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList<Ticket> TicketList = FXCollections.observableArrayList();
-        // formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         showsNameCol.setCellValueFactory(new PropertyValueFactory<Ticket, String>("showsNameComboBox"));
         noOfTicketCol.setCellValueFactory(new PropertyValueFactory<Ticket, Integer>("noOfTicket"));
         dodCol.setCellValueFactory(new PropertyValueFactory<Ticket, LocalDate>("dob"));

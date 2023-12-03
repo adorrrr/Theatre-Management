@@ -1,5 +1,6 @@
 package mainpkg;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,9 +16,8 @@ import javafx.stage.Stage;
 
 
 public class AudienceUpcomingShowsSceneController implements Initializable {
-    /**
-     * Initializes the controller class.
-     */
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 

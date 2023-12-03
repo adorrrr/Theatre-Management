@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package mainpkg;
 
 import java.io.IOException;
@@ -67,7 +64,7 @@ public class DirectorDashboardSceneController implements Initializable {
 
     @FXML
     private void monthlyReportOnClick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("DirectorMonthlyReportScene.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(scene1);
@@ -111,8 +108,8 @@ public class DirectorDashboardSceneController implements Initializable {
     }
 
     @FXML
-    private void rulesAndRegulationsOnClick(ActionEvent event) throws IOException {
-        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
+    private void termsAndConditionOnClick(ActionEvent event) throws IOException {
+        Parent mainSceneParent = FXMLLoader.load(getClass().getResource("DirectorTermsAndCondition.fxml"));
         Scene scene1 = new Scene(mainSceneParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(scene1);

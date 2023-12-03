@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
+
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -24,17 +21,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
+
+
 public class DirectorFeedbackSceneController implements Initializable {
 
-    @FXML
-    private TextArea directorGiveFeedbackTextArea;
-    @FXML
-    private TextField artistNameTextField;
+    @FXML private TextArea directorGiveFeedbackTextArea;
+    @FXML private TextField artistNameTextField;
 
     
     @Override

@@ -1,5 +1,6 @@
 package mainpkg;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -33,13 +34,14 @@ public class AudienceScheduleCheckSceneController implements Initializable {
     @FXML private TableColumn<ShowsInfo, String> timeColumn;
     @FXML private TableColumn<ShowsInfo, Float> priceColumn;
 
-
+    
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
 
+    
     @FXML
     private void addTableViewOnClick(ActionEvent event) throws IOException {
         ObservableList<ShowsInfo>ShowList= FXCollections.observableArrayList();
@@ -49,12 +51,14 @@ public class AudienceScheduleCheckSceneController implements Initializable {
         timeColumn.setCellValueFactory(new PropertyValueFactory<ShowsInfo,String>("time"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<ShowsInfo,Float>("price"));
         
+        
         File f = null;
         FileInputStream fis = null;
         ObjectInputStream ois = null;
 
+        
         try {
-            f = new File("Products.bin");
+            f = new File("Venue Schedule.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             ShowsInfo p;
@@ -79,6 +83,8 @@ public class AudienceScheduleCheckSceneController implements Initializable {
         tableView.setItems(ShowList);
     }
 
+    
+    
     @FXML
     private void returnHomePage(ActionEvent event) throws IOException {
         Parent mainSceneParent = FXMLLoader.load(getClass().getResource("AudienceDashboardScene.fxml"));

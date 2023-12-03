@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -67,7 +64,7 @@ public class DirectorMonthlyReportSceneController implements Initializable {
         ObjectInputStream ois = null;
 
         try {
-            f = new File("Chat.bin");
+            f = new File("cost.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             BudgetDC p;

@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,42 +29,27 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
 public class DirectorScheduleSceneController implements Initializable {
 
-    @FXML
-    private TableView<SchedulePick> tableView;
-    @FXML
-    private TableColumn<SchedulePick, String> departmentCol;
-    @FXML
-    private TableColumn<SchedulePick, Integer> timeCol;
-    @FXML
-    private TableColumn<SchedulePick, LocalDate> dateCol;
-    @FXML
-    private TableColumn<SchedulePick, String> scheduleCol;
-    @FXML
-    private DatePicker dob;
-    @FXML
-    private TextField timeTextField;
-    @FXML
-    private TextField departmentNameTextFeield;
-    @FXML
-    private ComboBox<String> scheduleType;
+    @FXML private TableView<SchedulePick> tableView;
+    @FXML private TableColumn<SchedulePick, String> departmentCol;
+    @FXML private TableColumn<SchedulePick, Integer> timeCol;
+    @FXML private TableColumn<SchedulePick, LocalDate> dateCol;
+    @FXML private TableColumn<SchedulePick, String> scheduleCol;
+    @FXML private DatePicker dob;
+    @FXML private TextField timeTextField;
+    @FXML private TextField departmentNameTextFeield;
+    @FXML private ComboBox<String> scheduleType;
 
     
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        scheduleType.getItems().addAll("Main Shooting", "Practice");
-        
+        scheduleType.getItems().addAll("Main Shooting", "Practice"); 
         
         ObservableList<SchedulePick> ScheduleList = FXCollections.observableArrayList();
-        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         departmentCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, String>("department"));
         timeCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, Integer>("time"));
         dateCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, LocalDate>("Date"));
@@ -78,7 +60,7 @@ public class DirectorScheduleSceneController implements Initializable {
         File f = null;
 
         try {
-            f = new File("SchedulePick.bin");
+            f = new File("Director give schedule.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             SchedulePick p;
@@ -114,7 +96,7 @@ public class DirectorScheduleSceneController implements Initializable {
         ObjectOutputStream oos = null;
         File f = null;
         try {
-            f = new File("SchedulePick.bin");
+            f = new File("Director give schedule.bin");
             if (f.exists()) {
                 fos = new FileOutputStream(f, true);
                 oos = new AppendableObjectOutputStream(fos);
@@ -141,7 +123,7 @@ public class DirectorScheduleSceneController implements Initializable {
             }
         }
         ObservableList<SchedulePick> ScheduleList = FXCollections.observableArrayList();
-        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
+
         departmentCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, String>("department"));
         timeCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, Integer>("time"));
         dateCol.setCellValueFactory(new PropertyValueFactory<SchedulePick, LocalDate>("Date"));
@@ -151,7 +133,7 @@ public class DirectorScheduleSceneController implements Initializable {
         ObjectInputStream ois = null;
 
         try {
-            f = new File("SchedulePick.bin");
+            f = new File("Director give schedule.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             SchedulePick p;

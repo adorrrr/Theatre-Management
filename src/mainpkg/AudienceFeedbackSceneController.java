@@ -1,16 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
 
-import java.io.DataOutputStream;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,28 +16,22 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
+
+
+
 public class AudienceFeedbackSceneController implements Initializable {
+    @FXML private TextArea feedbackTextArea;
+    @FXML private TextField userIDTextField;
+    @FXML private TextField usernameTextField1;
 
-    @FXML
-    private TextArea feedbackTextArea;
-    @FXML
-    private TextField userIDTextField;
-    @FXML
-    private TextField usernameTextField1;
-
-    /**
-     * Initializes the controller class.
-     */
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      
@@ -50,7 +39,10 @@ public class AudienceFeedbackSceneController implements Initializable {
 
     @FXML
     private void submitFeedbackButtonOnClick(ActionEvent event) {
-        Feedback i = new Feedback(usernameTextField1.getText(), Integer.parseInt(userIDTextField.getText()), feedbackTextArea.getText());
+        Feedback i = new Feedback(usernameTextField1.getText(),
+                                    Integer.parseInt(userIDTextField.getText()),
+                                    feedbackTextArea.getText());
+        
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         File f = null;

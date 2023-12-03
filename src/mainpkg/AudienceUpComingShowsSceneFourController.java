@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
 
+
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,51 +22,65 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author World gate computer
- */
+
+
+
 public class AudienceUpComingShowsSceneFourController implements Initializable {
 
-    @FXML
-    private TableView<ShowsInfo> detailsTableView;
-    @FXML
-    private TableColumn<ShowsInfo, String> detailsBoard;
+    @FXML private TableView<ShowsInfo> detailsTableView;
+    @FXML private TableColumn<ShowsInfo, String> detailsBoard;
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         detailsBoard.setCellValueFactory(new PropertyValueFactory<>("text"));
-    }    
+    }  
+    
 
     @FXML
     private void retrunUpcomingShowsScene(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("AudienceUpcomingShowsScene.fxml"));
                 Scene tableViewScene = new Scene(tableViewParent);
-                //This line gets the Stage information
                 Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
                 window.setScene(tableViewScene);
                 window.show();
     }
 
+    
     @FXML
     private void loadDetailsButtonOnClick(ActionEvent event) throws IOException {
-        ShowsInfo selectedItem = detailsTableView.getSelectionModel().getSelectedItem();
-        if (selectedItem != null) 
-        {
-            detailsTableView.getItems().remove(selectedItem);
-            
-            FileWriter fw = new FileWriter("UpComingShowsSceneThree.txt");
-            
-            for(ShowsInfo msg: detailsTableView.getItems())
-            {
-                fw.write(msg.getText() + "\n");
+        ObservableList<ShowsInfo> ShowsList = FXCollections.observableArrayList();
+        detailsBoard.setCellValueFactory(new PropertyValueFactory<ShowsInfo, String>("text"));
+       
+        
+
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File("Dakghar.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            ShowsInfo p;
+            try {
+                while (true) {
+                    p = (ShowsInfo) ois.readObject();
+                    ShowsList.add(p);
+                }
+            } catch (Exception e) {
             }
-            fw.close();
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+
         }
+        detailsTableView.setItems(ShowsList);
     }
     
 }

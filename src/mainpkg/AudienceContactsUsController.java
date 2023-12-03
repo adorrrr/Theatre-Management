@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
 
 import java.io.BufferedReader;
@@ -41,16 +37,11 @@ import javafx.stage.Stage;
 
 public class AudienceContactsUsController implements Initializable {
 
-    @FXML
-    private ComboBox<String> selectVenueCombocox;
-    @FXML
-    private TableView<VanueContacts> tableView;
-    @FXML
-    private TableColumn<VanueContacts, String> addressCol;
-    @FXML
-    private TableColumn<VanueContacts, Integer> numberCol;
-    @FXML
-    private TableColumn<VanueContacts, String> mailCol;
+    @FXML private ComboBox<String> selectVenueCombocox;
+    @FXML private TableView<VanueContacts> tableView;
+    @FXML private TableColumn<VanueContacts, String> addressCol;
+    @FXML private TableColumn<VanueContacts, Integer> numberCol;
+    @FXML private TableColumn<VanueContacts, String> mailCol;
 
 
     
@@ -59,8 +50,9 @@ public class AudienceContactsUsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         selectVenueCombocox.getItems().addAll("Chittagong",
-                "Dhaka","Khulna","Sylhet"
-                );
+                "Dhaka",
+                "Kushtia",
+                "Tangail");
     }    
 
 
@@ -68,7 +60,6 @@ public class AudienceContactsUsController implements Initializable {
     private void selectVenueComboBoxOnItemSelected(ActionEvent event) {
         if(selectVenueCombocox.getValue().equals("Dhaka")) {
         ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
-        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));
         numberCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, Integer>("Number"));
         mailCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Mail"));
@@ -79,7 +70,7 @@ public class AudienceContactsUsController implements Initializable {
         ObjectInputStream ois = null;
 
         try {
-            f = new File(".bin");
+            f = new File("Dhaka.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             VanueContacts p;
@@ -107,7 +98,6 @@ public class AudienceContactsUsController implements Initializable {
         
         else if(selectVenueCombocox.getValue().equals("Chittagong")) {
         ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
-        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));
         numberCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, Integer>("Number"));
         mailCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Mail"));
@@ -118,7 +108,7 @@ public class AudienceContactsUsController implements Initializable {
         ObjectInputStream ois = null;
 
         try {
-            f = new File(".bin");
+            f = new File("Chittagong.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             VanueContacts p;
@@ -142,9 +132,8 @@ public class AudienceContactsUsController implements Initializable {
         }
         tableView.setItems(ContactsList);  
         }
-        else if(selectVenueCombocox.getValue().equals("Khulna")) {
+        else if(selectVenueCombocox.getValue().equals("Kushtia")) {
         ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
-        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));
         numberCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, Integer>("Number"));
         mailCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Mail"));
@@ -155,7 +144,7 @@ public class AudienceContactsUsController implements Initializable {
         ObjectInputStream ois = null;
 
         try {
-            f = new File(".bin");
+            f = new File("Kushtia.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             VanueContacts p;
@@ -179,9 +168,8 @@ public class AudienceContactsUsController implements Initializable {
         }
         tableView.setItems(ContactsList);  
         }
-        else if(selectVenueCombocox.getValue().equals("Sylhet")) {
+        else if(selectVenueCombocox.getValue().equals("Tangail")) {
         ObservableList<VanueContacts> ContactsList = FXCollections.observableArrayList();
-        //    formate:  columnFxid.setCellValueFactory(new PropertyValueFactory<ModelClass, Type>("ModelcCassFieldName"));
         addressCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Address"));
         numberCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, Integer>("Number"));
         mailCol.setCellValueFactory(new PropertyValueFactory<VanueContacts, String>("Mail"));
@@ -192,7 +180,7 @@ public class AudienceContactsUsController implements Initializable {
         ObjectInputStream ois = null;
 
         try {
-            f = new File(".bin");
+            f = new File("Tangail.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             VanueContacts p;

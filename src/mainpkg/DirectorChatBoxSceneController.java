@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mainpkg;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,23 +28,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author User
- */
+
+
 public class DirectorChatBoxSceneController implements Initializable {
 
-    @FXML
-    private TextArea messageTextField;
-    @FXML
-    private TableView<Chat> tableView;
-    @FXML
-    private TableColumn<Chat, String> departmentCol;
-    @FXML
-    private TableColumn<Chat, String> messageCol;
-    @FXML
-    private TextField depaetmentTextField;
+    @FXML private TextArea messageTextField;
+    @FXML private TableView<Chat> tableView;
+    @FXML private TableColumn<Chat, String> departmentCol;
+    @FXML private TableColumn<Chat, String> messageCol;
+    @FXML private TextField depaetmentTextField;
 
     
     
@@ -79,7 +68,7 @@ public class DirectorChatBoxSceneController implements Initializable {
             
 
         } catch (IOException ex) {
-            Logger.getLogger(DirectorScheduleSceneController.class
+            Logger.getLogger(DirectorChatBoxSceneController.class
                     .getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
@@ -88,7 +77,7 @@ public class DirectorChatBoxSceneController implements Initializable {
 
                 }
             } catch (IOException ex) {
-                Logger.getLogger(DirectorScheduleSceneController.class
+                Logger.getLogger(DirectorChatBoxSceneController.class
                         .getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -131,6 +120,8 @@ public class DirectorChatBoxSceneController implements Initializable {
         }
         tableView.setItems(ChatList);
     }
+    
+    
 
     @FXML
     private void returnHomePage(ActionEvent event) throws IOException {
